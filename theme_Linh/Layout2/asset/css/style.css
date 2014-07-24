@@ -1,0 +1,84 @@
+a{
+	color: #fff;
+	text-decoration: none;
+}
+#jmdefault{
+	width: 350px;
+	margin: 0 auto;
+	background: #cc6054;
+	position: relative;
+	top: 100px;
+	line-height: 1;
+	font-family: cursive;
+}
+.jminner{
+	padding: 20px 30px;
+	color: #fff
+}
+
+/*form*/
+form#login-form{margin: 15px 0;}
+
+form#login-form input{color: #fff;padding: 10px 0;margin:0 0 15px 0;}
+form#login-form input.inputbox{
+	width: 83%;
+	text-indent: 10px;
+	background: transparent;
+	border: 2px solid #fff;
+}
+::-webkit-input-placeholder {
+   color: #fff;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color:  #fff;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color:  #fff;  
+}
+
+:-ms-input-placeholder {  
+   color:  #fff;  
+}
+form#login-form input[type='submit']{
+	width: 100%;
+	background: #fff;
+	text-transform: uppercase;
+	font-weight: bold;
+	border: none;
+	color: #cc6054;
+}
+hr{
+	border: 3px double;
+}
+/*Login------------------*/
+form#login-form span{
+	display: inline-block;
+	text-align: center;
+	background: #fff;
+	padding: 10px 0 9px;
+	width: 14%;
+	color: #cc6054;
+	border: 2px solid #fff;
+	float: left;
+}
+.jm_remember input{margin:0;}
+.jm-login-footer{overflow: hidden;}
+.jm-login-footer a{display: block;}
+
+.jmsocial{
+	text-align: center;
+}
+.jmsocial ul{padding: 0;margin: 5px 0;}
+.jmsocial ul li{
+	display: inline-block;
+	list-style: none;
+}
+.jmsocial ul li a{transition:1s;background: #1d9e74;padding: 4px;
+font-size: 20px;
+border-radius: 4px;
+width: 20px;}
+.jmsocial ul li a:hover{color: #1d9e74;background: #fff;}
+/*Register------------------*/
+.jmregister
