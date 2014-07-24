@@ -53,7 +53,7 @@ hr{
 	border: 3px double;
 }
 /*Login------------------*/
-form#login-form span{
+form#login-form .input span{
 	display: inline-block;
 	text-align: center;
 	background: #fff;
@@ -75,10 +75,20 @@ form#login-form span{
 	display: inline-block;
 	list-style: none;
 }
-.jmsocial ul li a{transition:1s;background: #1d9e74;padding: 4px;
-font-size: 20px;
-border-radius: 4px;
-width: 20px;}
-.jmsocial ul li a:hover{color: #1d9e74;background: #fff;}
+.jmsocial ul li a{
+	transition: 1s;
+	font-size: 18px;
+	border: 2px solid #fff;
+	display: block;
+}
+.jmsocial ul li a i{
+	display: inline-block;
+	background: #fff;
+	color: #cc6054;
+	padding: 5px 7px;
+	transition: 1s;
+}
+.jmsocial ul li a:hover{color: #cc6054;background: #fff;}
+.jmsocial ul li a:hover i{background: #cc6054;color:#fff;}
 /*Register------------------*/
 .jmregister
