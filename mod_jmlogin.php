@@ -2,6 +2,7 @@
 echo "got git yet?";
 echo "TU here";
 echo " TU first";
+echo " my editing";
 /* * --------------------------------------------------------------------
   # Package - JoomlaMan JM Login
   # Version 1.0
