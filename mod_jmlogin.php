@@ -1,5 +1,6 @@
 <?php
 echo "got git yet?";
+echo "TU here";
 /* * --------------------------------------------------------------------
   # Package - JoomlaMan JM Login
   # Version 1.0
