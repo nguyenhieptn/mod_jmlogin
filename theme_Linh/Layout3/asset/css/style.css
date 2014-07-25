@@ -1,4 +1,4 @@
-.jmlogin a{
+.jm_login a{
 	color: #fff;
 	text-decoration: none;
 }
@@ -6,14 +6,13 @@
 	width: 300px;
 	margin: 0 auto;
 	background: #ccc;
-	border-radius: 10px;
 	position: relative;
 	top: 100px;
 	line-height: 1;
 }
 
 /*form*/
-.jmlogin form#login-form input{color: #fff;padding: 10px 0;margin:0;text-transform: uppercase;}
+.jm_login form#login-form input{color: #fff;padding: 10px 0;margin:0;text-transform: uppercase;text-align: center;}
 .jmbg{padding: 15px;position: relative;}
 .jmbg:after{
 	position: absolute;
@@ -25,20 +24,35 @@
 	border-style: solid;
 	border-width: 5px;
 	z-index: 1;
+	border-bottom-color: rgba(255,255,255,0) ;
+	border-left-color:rgba(255,255,255,0) ;
+	border-right-color: rgba(255,255,255,0) ;
 }
+/*bg Name*/
+.jm_login .jmname{background: #88568b;}
+.jm_login .jmname:after{border-top-color:#88568b;}
 /*Bg Username*/
-.jmusername{background: #4daf7c;}
-.jmusername:after{border-color: #4daf7c rgba(255,255,255,0) rgba(255,255,255,0) rgba(255,255,255,0);}
+.jm_login .jmusername{background: #4daf7c;}
+.jm_login .jmusername:after{border-top-color: #4daf7c;}
 /*Bg Pass*/
-.jmpassword{background: #e6746a;}
-.jmpassword:after{border-color: #e6746a rgba(255,255,255,0) rgba(255,255,255,0) rgba(255,255,255,0);}
+.jm_login .jmpassword{background: #e6746a;}
+.jm_login .jmpassword:after{border-top-color: #e6746a ;}
+/*Bg jmconfirmpassword*/
+.jm_login .jmconfirmpassword{background: #29bbae;}
+.jm_login .jmconfirmpassword:after{border-top-color: #29bbae ;}
+/*Bg jmemailaddress*/
+.jm_login .jmemailaddress{background:#af7766;}
+.jm_login .jmemailaddress:after{border-top-color: #af7766;}
+/*Bg jmconfirmemailaddress*/
+.jm_login .jmconfirmemailaddress{background: #10aace;}
+.jm_login .jmconfirmemailaddress:after{border-top-color:#10aace;}
 /*Bg Social*/
-.jmsocial{background: #404241;}
-.jmsocial:after{border-color: #404241 rgba(255,255,255,0) rgba(255,255,255,0) rgba(255,255,255,0);}
+.jm_login .jmsocial{background: #404241;}
+.jm_login .jmsocial:after{border-top-color: #404241;}
 /*Submit*/
-.jmsubmit {background: #e9c85d;}
-.jmsubmit:after{border-color: #e9c85d rgba(255,255,255,0) rgba(255,255,255,0) rgba(255,255,255,0);}
-.jmlogin form#login-form input.inputbox{
+.jm_login .jmsubmit {background: #e9c85d;}
+.jm_login .jmsubmit:after{border-top-color: #e9c85d;}
+.jm_login form#login-form input.inputbox{
 	width: 99%;
 	text-indent: 10px;
 	background: transparent;
@@ -59,7 +73,7 @@
 :-ms-input-placeholder {  
    color:  #fff;  
 }
-.jmlogin form#login-form input[type='submit']{
+.jm_login form#login-form input[type='submit']{
 	width: 100%;
 	text-transform: uppercase;
 	border: none;
@@ -69,15 +83,15 @@
 	padding: 0;
 }
 /*Login------------------*/
-.jmsocial{
+.jm_login .jmsocial{
 	text-align: center;
 }
-.jmsocial ul{padding: 15px 0;margin:  0;}
-.jmsocial ul li{
+.jm_login .jmsocial ul,.jm_login .jm_register{padding: 15px 0;margin:  0;}
+.jm_login .jmsocial ul li{
 	display: inline-block;
 	list-style: none;
 }
-.jmsocial ul li a{
+.jm_login .jmsocial ul li a{
 	transition: 1s;
 	font-size: 18px;
 	display: block;
@@ -85,6 +99,4 @@
 	width: 30px;
 	border-radius: 15px;
 }
-.jmsocial ul li a:hover{color: #fff;background:  #cc6054;}
-/*Register------------------*/
-.jmregister
+.jm_login .jmsocial ul li a:hover{color: #fff;background:  #cc6054;}

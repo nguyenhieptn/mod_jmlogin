@@ -8,7 +8,7 @@
  	<link href="asset/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-	<div id="jmdefault" class="jmregister">
+	<div id="jmdefault" class="jmregister jm_login">
 		<div class="jminner">
 			<div class="jmuser_images"><span><i class="fa fa-pencil"></i></span></div>
 			<div class="jmtitle">Register</div>

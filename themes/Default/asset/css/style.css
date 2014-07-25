@@ -1,4 +1,4 @@
-.jmlogin a{
+.jm_login a{
 	color: #fff;
 	text-decoration: none;
 }
@@ -8,14 +8,14 @@
 	position: relative;
 	line-height: 1;
 }
-.jminner{
+.jm_login .jminner{
 	padding: 20px 30px;
 	color: #fff
 }
-.jmuser_images{
+.jm_login .jmuser_images{
 	text-align: center;
 }
-.jmuser_images span{
+.jm_login .jmuser_images span{
 	display: block;
 margin: 0 auto;
 background: #fff;
@@ -24,17 +24,17 @@ border-radius: 30px;
 padding: 5px;
 height: 50px;
 }
-.jmuser_images i{color: #1d9e74;font-size: 50px;}
+.jm_login .jmuser_images i{color: #1d9e74;font-size: 50px;}
 /*form*/
-.jmlogin form#login-form{margin: 15px 0;}
+.jm_login form#login-form{margin: 15px 0;}
 
-.jmlogin form#login-form input{border: none;color: #fff;padding: 10px 0;margin:0 0 15px 0;}
-.jmlogin form#login-form input.inputbox{
+.jm_login form#login-form input{border: none;color: #fff;padding: 10px 0;margin:0 0 15px 0;}
+.jm_login form#login-form input.inputbox{
 	width: 100%;
 	text-indent: 10px;
 	background: #e8e8e8;color: #4f4f4f;
 }
-.jmlogin form#login-form input[type='submit']{
+.jm_login form#login-form input[type='submit']{
 	width: 100%;
 	background: #4fc5ad;
 	text-transform: uppercase;
@@ -43,31 +43,31 @@ height: 50px;
 }
 
 /*Login------------------*/
-.jmlogin form#login-form input.inputbox{width: 85%;}
-.jmlogin form#login-form span{
+.jm_login form#login-form input.inputbox{width: 85%;}
+.jm_login form#login-form span{
 	display: inline-block;
 	text-align: center;
 	background: #4fc5ad;
 	padding: 15px 0;
 	width: 15%;	
 }
-.jmlogin .jm_remember input{margin:0;}
-.jmlogin .jm-login-footer{overflow: hidden;}
-.jmlogin .jm-login-footer a{display: block;}
-.jmlogin .jmwidth{
+.jm_login .jm_remember input{margin:0;}
+.jm_login .jm-login-footer{overflow: hidden;}
+.jm_login .jm-login-footer a{display: block;}
+.jm_login .jmwidth{
 	width: 50%;
 	float: left;
 }
-.jmlogin .jmsocial{
+.jm_login .jmsocial{
 	text-align: center;
 }
-.jmlogin .jmsocial ul{padding: 0;margin: 5px 0;}
-.jmlogin .jmsocial ul li{
+.jm_login .jmsocial ul{padding: 0;margin: 5px 0;}
+.jm_login .jmsocial ul li{
 	display: inline-block;
 	list-style: none;
 }
-.jmlogin  .jmsocial ul li a{transition:1s;background: #1d9e74;padding: 4px;
+.jm_login .jmsocial ul li a{transition:1s;background: #1d9e74;padding: 4px;
 font-size: 20px;
 border-radius: 4px;
 width: 20px;}
-.jmlogin .jmsocial ul li a:hover{color: #1d9e74;background: #fff;}
+.jm_login.jmsocial ul li a:hover{color: #1d9e74;background: #fff;}

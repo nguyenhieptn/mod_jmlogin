@@ -1,4 +1,4 @@
-.jmlogin  a{
+.jm_login  a{
 	color: #fff;
 	text-decoration: none;
 }
@@ -11,16 +11,16 @@
 	line-height: 1;
 	font-family: cursive;
 }
-.jminner{
+.jm_login .jminner{
 	padding: 20px 30px;
 	color: #fff
 }
 
 /*form*/
-.jmlogin form#login-form{margin: 15px 0;}
+.jm_login form#login-form{margin: 15px 0;}
 
-.jmlogin form#login-form input{color: #fff;padding: 10px 0;margin:0 0 15px 0;}
-.jmlogin form#login-form input.inputbox{
+.jm_login form#login-form input{color: #fff;padding: 10px 0;margin:0 0 15px 0;}
+.jm_login form#login-form input.inputbox{
 	width: 83%;
 	text-indent: 10px;
 	background: transparent;
@@ -41,7 +41,7 @@
 :-ms-input-placeholder {  
    color:  #fff;  
 }
-.jmlogin form#login-form input[type='submit']{
+.jm_login form#login-form input[type='submit']{
 	width: 100%;
 	background: #fff;
 	text-transform: uppercase;
@@ -53,7 +53,7 @@ hr{
 	border: 3px double;
 }
 /*Login------------------*/
-.jmlogin form#login-form .input span{
+.jm_login form#login-form .input span{
 	display: inline-block;
 	text-align: center;
 	background: #fff;
@@ -63,32 +63,31 @@ hr{
 	border: 2px solid #fff;
 	float: left;
 }
-.jm_remember input{margin:0;}
-.jm-login-footer{overflow: hidden;}
-.jm-login-footer a{display: block;}
+.jm_login .jm_remember input{margin:0;}
+.jm_login .jm-login-footer{overflow: hidden;}
+.jm_login .jm-login-footer a{display: block;}
 
-.jmsocial{
+.jm_login .jmsocial{
 	text-align: center;
 }
-.jmsocial ul{padding: 0;margin: 5px 0;}
-.jmsocial ul li{
+.jm_login .jmsocial ul{padding: 0;margin: 5px 0;}
+.jm_login .jmsocial ul li{
 	display: inline-block;
 	list-style: none;
 }
-.jmsocial ul li a{
+.jm_login .jmsocial ul li a{
 	transition: 1s;
 	font-size: 18px;
 	border: 2px solid #fff;
 	display: block;
 }
-.jmsocial ul li a i{
+.jm_login .jmsocial ul li a i{
 	display: inline-block;
 	background: #fff;
 	color: #cc6054;
 	padding: 5px 7px;
 	transition: 1s;
 }
-.jmsocial ul li a:hover{color: #cc6054;background: #fff;}
-.jmsocial ul li a:hover i{background: #cc6054;color:#fff;}
+.jm_login .jmsocial ul li a:hover{color: #cc6054;background: #fff;}
+.jm_login .jmsocial ul li a:hover i{background: #cc6054;color:#fff;}
 /*Register------------------*/
-.jmregister
