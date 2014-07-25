@@ -86,10 +86,6 @@ var jm_login_base_url = '<?php print JURI::root(true);?>';
                     include("modules/mod_jmlogin/themes/".$theme."/register.php");
                 //}
                 ?>
-                <!-- End  register -->
-                <!-- Start  regain password -->
-								<?php include("inc/default_regain_password.php"); ?>
-                <!-- End  regain password -->
             </div>
         </div>		
     </div>
