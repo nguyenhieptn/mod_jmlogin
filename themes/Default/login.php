@@ -1,15 +1,9 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
- 	<meta name="viewport" content="width=device-width, initial-scale=1">
- 	<title>LoginDefault</title>
- 	<link href="asset/css/style.css" rel="stylesheet">
- 	<link href="modules/mod_jmlogin/asset/css/font-awesome.min.css" rel="stylesheet">
-</head>
-<body>
-	<div id="jmdefault" class="jmlogin">
+<?php 
+    $doc=  JFactory::getDocument();
+    $doc->addStyleSheet(JURI::base(true) . '/modules/mod_jmlogin/themes/Default/asset/css/style.css');
+    $doc->addStyleSheet(JURI::base(true) . '/modules/mod_jmlogin/themes/Default/asset/css/font-awesome.min.css');
+?>
+	<div id="jmlogin" class="jmdefault jmlogin jm_login">
 		<div class="jminner">
 			<div class="jmuser_images"><span><i class="fa fa-user"></i></span></div>
 			<form method="POST" id="login-form">
@@ -48,5 +42,3 @@
 			</form>
 		</div>
 	</div>
-</body>
-</html>

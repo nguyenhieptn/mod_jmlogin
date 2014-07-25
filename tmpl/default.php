@@ -74,21 +74,16 @@ var jm_login_base_url = '<?php print JURI::root(true);?>';
             <?php endif; ?>
         </div>
     <?php } ?>
-    <div id="jmmodal" class="jm-tabs-content jmmodal" data-modalwidth="<?php echo $modal_width;?>" data-modalheight="<?php echo $modal_height;?>" data-modalclose="<?php echo $show_close_btn;?>" data-modalscroll="<?php echo $modal_scroll;?>" data-tabheight="265">
+    <div id="jmmodal" class="jm-tabs-content jmmodal" data-modalwidth="<?php echo $modal_width;?>"  data-modalclose="<?php echo $show_close_btn;?>" >
         <div id="jm-login-wrap">
-            <div class="tab-outer">
-                <span id="tab-jmlogin" data-tab="jmtab" data-tabid="#jmlogin" class="tab-inner active"><?php echo "User Login"; ?></span>
-                <span id="tab-jmregister" data-tab="jmtab" data-tabid="#jmregister" class="tab-inner"><?php echo $label_register; ?></span>
-                <span id="tab-regain_password" data-tab="jmtab" data-tabid="#regain_password" class="tab-inner"><?php echo $label_regain_password; ?></span>
-            </div>
             <div id="tab-content"  class="jmmodal-body">
                 <!-- Start login -->
-                <?php include("inc/default_login.php"); ?>
+                <?php include("modules/mod_jmlogin/themes/".$theme."/login.php"); ?>
                 <!-- End login -->
                 <!-- Start  register -->
                 <?php
                 //if ($register_tab) {
-                    include("inc/default_register.php");
+                    include("modules/mod_jmlogin/themes/".$theme."/register.php");
                 //}
                 ?>
                 <!-- End  register -->

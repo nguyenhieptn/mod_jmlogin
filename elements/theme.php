@@ -20,54 +20,35 @@ class JFormFieldTheme extends JFormField {
 	    
 	    protected function getInput() {
 	    $html=array();
-	    $files=array();
-			$options = array();
+	    $folder=array();
+            $options = array();
 	    $i=0;
 	    	$html[]='<select class="jm-field single" name="'.$this->name.'">';
-	    	if(is_dir(JPATH_SITE . '/templates/' . $this->getTemplate() . '/html/mod_jmnewspro/'))
-	    	if ($handle = opendir(JPATH_SITE . '/templates/' . $this->getTemplate() . '/html/mod_jmnewspro/')) {
+	    	if(is_dir(JPATH_SITE . '/modules/mod_jmlogin/themes/'))
+	    	if ($handle = opendir(JPATH_SITE . '/modules/mod_jmlogin/themes/')) {
+                    
 		    while (false !== ($entry = readdir($handle))) {
 		    	$files[$entry]=$entry;
+                        
 		    	if ($entry != "." && $entry != ".." &&$entry!="index.html"){
+                            
 		    		if($this->value==str_replace('.php','',$entry)) {
 		    			$selected=" selected=true ";
 		    			}
 		    		else $selected="";
 						//Parser layout name
-						$layout_name = str_replace('.php','',$entry);
+						$theme_name = str_replace('.php','',$entry);
 						$order = 9999;
 						ob_start();
-						readfile(JPATH_SITE . '/templates/' . $this->getTemplate() . '/html/mod_jmnewspro/' . $entry);
+						readfile(JPATH_SITE . '/modules/mod_jmlogin/themes/' . $entry);
 						$file_content = ob_get_clean();
+                                                //var_dump($file_content); die;
 						preg_match("'<!--layout:(.*?),order:(.*?)-->'si", $file_content, $match);
-						if(isset($match[1])) $layout_name = $match[1];
+						if(isset($match[1])) $theme_name = $match[1];
 						if(isset($match[2])) $order = $match[2];
-						$option_html = '<option '.$selected.' value="'.str_replace('.php','',$entry).'">'.$layout_name.'</option>';
+						$option_html = '<option '.$selected.' value="'.str_replace('.php','',$entry).'">'.$theme_name.'</option>';
 						$options[] = array('order'=>$order,'html'=> $option_html);
-						//$html[]='<option '.$selected.' value="'.str_replace('.php','',$entry).'">'.$layout_name.'</option>';
-			}
-		    }
-		    closedir($handle);
-		}
-		if ($handle = opendir(JPATH_SITE.'/modules/mod_jmnewspro/tmpl/')) {
-		    while (false !== ($entry = readdir($handle))) {
-		    	if(!in_array($entry,$files))
-		    	if ($entry != "." && $entry != ".." &&$entry!="index.html"){
-		    		if($this->value==str_replace('.php','',$entry)) {
-		    			$selected=" selected=true ";
-		    			}
-		    		else $selected="";
-						//Parser layout name
-						$layout_name = str_replace('.php','',$entry);
-						$order = 9999;
-						ob_start();
-						readfile(JPATH_SITE.'/modules/mod_jmnewspro/tmpl/' . $entry);
-						$file_content = ob_get_clean();
-						preg_match("'<!--layout:(.*?),order:(.*?)-->'si", $file_content, $match);
-						if(isset($match[1])) $layout_name = $match[1];
-						if(isset($match[2])) $order = $match[2];
-						$option_html = '<option '.$selected.' value="'.str_replace('.php','',$entry).'">'.$layout_name.'</option>';
-						$options[] = array('order'=>$order,'html'=> $option_html);
+						//$html[]='<option '.$selected.' value="'.str_replace('.php','',$entry).'">'.$theme_name.'</option>';
 			}
 		    }
 		    closedir($handle);

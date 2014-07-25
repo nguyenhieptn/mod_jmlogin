@@ -38,6 +38,7 @@ $load_jquery = $params->get('loadJquery');
 $align_option = $params->get('align_option');
 $login_redirect = $params->get('login');
 $logout_redirect = $params->get('logout');
+$theme = $params->get('theme','Default');
 $publickey = $params->get('recaptcha_public', '6LfSV9MSAAAAAFj0hZMcuGtMD7drzb7zhvrmQqnf');
 $private_key = $params->get('recaptcha_private', '6LfSV9MSAAAAAPBf64L7fmC_uii-EKza_98qKpG3');
 $name_display = $params->get('name');
@@ -49,12 +50,16 @@ $captcha = $params->get('error_wrong_capcha_register', 'Error: Wrong capcha');
 $success = $params->get('mess_successfully_register_register', 'Successfully register, check mail (spam) activation account.');
 $nexist = $params->get('mess_account_not_exists_regainpass', 'Note: Account not exists');
 $check = $params->get('mess_check_mail_regainpass', 'Note: Please check mail to retrieve your password.');
+
+//
 require_once JPATH_SITE . '/modules/mod_jmlogin/assets/recapcha/recaptchalib.php';
 $login = new modJmloginHelper();
 $login = $login->getLogin($params);
 $doc = JFactory::getDocument();
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 $custom_css = JPATH_SITE . '/templates/' . modJmloginHelper::getTemplate() . '/css/' . $module->module.'_'.'default'.'.css';
+
+//
 if (file_exists($custom_css)) {
     $doc->addStylesheet(JURI::base(true) . '/templates/' . modJmloginHelper::getTemplate() . '/css/' . $module->module.'_'. 'default' . '.css');
 } else {

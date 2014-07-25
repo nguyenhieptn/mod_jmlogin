@@ -29,7 +29,7 @@
         <language tag="en-GB">en-GB/en-GB.mod_jmlogin.ini</language>
     </languages>
     <config>
-        <fields name="params">			
+        <fields name="params" addfieldpath="/modules/mod_jmlogin/elements">			
             <fieldset name="basic">
                 <field
                     name="show_formlabel"
@@ -179,8 +179,14 @@
 				/>
             </fieldset>
             <fieldset name="advanced">
-                
-            <field 
+                <field 
+                    name="theme" 
+                    type="theme"  class="jm-field single"
+                                 default="0" 
+                                 label="Select Theme" 
+                                 description="BT_LOADJQUERY_DESC">
+                </field>
+                <field 
                     name="loadJquery" 
                     type="list"  class="jm-field single"
                                  default="0" 

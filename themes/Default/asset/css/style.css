@@ -2,12 +2,10 @@ a{
 	color: #fff;
 	text-decoration: none;
 }
-#jmdefault{
-	width: 350px;
+.jmdefault{
 	margin: 0 auto;
 	background: #1d9e74;
 	position: relative;
-	top: 100px;
 	line-height: 1;
 }
 .jminner{
@@ -73,5 +71,3 @@ font-size: 20px;
 border-radius: 4px;
 width: 20px;}
 .jmsocial ul li a:hover{color: #1d9e74;background: #fff;}
-/*Register------------------*/
-.jmregister

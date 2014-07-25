@@ -20,6 +20,7 @@
 	
 	$(document).ready(function(){
         $('[data-tab="jmtab"]').click(function(){
+            $('.jm_login').hide();
             var $this = $(this);
             $($this.attr('data-tabid').toString()).jmtab();
             return false;
