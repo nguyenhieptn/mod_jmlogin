@@ -14,7 +14,7 @@
         var defaultVal = {
             width: 500,
             height: 400,
-            top: 100,
+            top: 20,
             scroll: 'false',
             title: '',
             closeButton: 'true'
