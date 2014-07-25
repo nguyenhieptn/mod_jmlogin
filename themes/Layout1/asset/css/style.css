@@ -1,4 +1,4 @@
-a{
+.jmlogin a{
 	color: #fff;
 	text-decoration: none;
 }
@@ -36,30 +36,30 @@ height: 50px;
 	padding-top: 5px;
 }
 /*form*/
-form#login-form{margin: 15px 0;background: #eceaed;padding: 10px 20px;color: #f5683d;}
+.jmlogin form#login-form{margin: 15px 0;background: #eceaed;padding: 10px 20px;color: #f5683d;}
 
-form#login-form input{border-radius: 5px;border: none;color: #fff;padding: 10px 0;margin:5px 0;width: 100%;text-align: center;}
-form#login-form input.inputbox{
+.jmlogin form#login-form input{border-radius: 5px;border: none;color: #fff;padding: 10px 0;margin:5px 0;width: 100%;text-align: center;}
+.jmlogin form#login-form input.inputbox{
 	text-indent: 10px;
 	background: #d3d3d3;color: #666;
 }
-form#login-form input[type='submit']{
+.jmlogin form#login-form input[type='submit']{
 	background: #f5683d;
 	text-transform: uppercase;
 	font-weight: bold;
 }
 
 /*Login------------------*/
-form#login-form span{
+.jmlogin form#login-form span{
 	display: inline-block;
 	text-align: center;
 	background: #4fc5ad;
 	padding: 15px 0;
 	width: 15%;	
 }
-form#login-form .jm_remember p{display: inline-block;
+.jmlogin form#login-form .jm_remember p{display: inline-block;
 margin: 0;}
-form#login-form .jm_remember input{width: 15px;}
+.jmlogin form#login-form .jm_remember input{width: 15px;}
 .jm-login-footer{overflow: hidden;}
 .jm-login-footer a{display: block;color: #f5683d}
 .jmsocial{

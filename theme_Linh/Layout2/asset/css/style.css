@@ -1,4 +1,4 @@
-a{
+.jmlogin  a{
 	color: #fff;
 	text-decoration: none;
 }
@@ -17,10 +17,10 @@ a{
 }
 
 /*form*/
-form#login-form{margin: 15px 0;}
+.jmlogin form#login-form{margin: 15px 0;}
 
-form#login-form input{color: #fff;padding: 10px 0;margin:0 0 15px 0;}
-form#login-form input.inputbox{
+.jmlogin form#login-form input{color: #fff;padding: 10px 0;margin:0 0 15px 0;}
+.jmlogin form#login-form input.inputbox{
 	width: 83%;
 	text-indent: 10px;
 	background: transparent;
@@ -41,7 +41,7 @@ form#login-form input.inputbox{
 :-ms-input-placeholder {  
    color:  #fff;  
 }
-form#login-form input[type='submit']{
+.jmlogin form#login-form input[type='submit']{
 	width: 100%;
 	background: #fff;
 	text-transform: uppercase;
@@ -53,7 +53,7 @@ hr{
 	border: 3px double;
 }
 /*Login------------------*/
-form#login-form .input span{
+.jmlogin form#login-form .input span{
 	display: inline-block;
 	text-align: center;
 	background: #fff;
