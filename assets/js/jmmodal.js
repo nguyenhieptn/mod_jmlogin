@@ -123,6 +123,7 @@
         },
 
         updateScroll: function(){
+           
             if(this.$options.scroll != 'true') return;
             var $newHeight = this.$element.height() - this.$element.find('.jm-modal-header').height() - 60;
             this.$element.find('.viewport').css({height:$newHeight});
