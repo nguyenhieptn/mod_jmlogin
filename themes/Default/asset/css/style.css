@@ -71,3 +71,5 @@ font-size: 20px;
 border-radius: 4px;
 width: 20px;}
 .jm_login.jmsocial ul li a:hover{color: #1d9e74;background: #fff;}
+/*Register*/
+.jmregister form#login-form input.inputbox{width: 100%;}
