@@ -1,0 +1,90 @@
+a{
+	color: #fff;
+	text-decoration: none;
+}
+#jmdefault{
+	width: 300px;
+	margin: 0 auto;
+	background: #ccc;
+	border-radius: 10px;
+	position: relative;
+	top: 100px;
+	line-height: 1;
+}
+
+/*form*/
+form#login-form input{color: #fff;padding: 10px 0;margin:0;text-transform: uppercase;}
+.jmbg{padding: 15px;position: relative;}
+.jmbg:after{
+	position: absolute;
+	bottom: -10px;
+	left: 50%;
+	margin: 0 auto;
+	content: "";
+	border-image: none;
+	border-style: solid;
+	border-width: 5px;
+	z-index: 1;
+}
+/*Bg Username*/
+.jmusername{background: #4daf7c;}
+.jmusername:after{border-color: #4daf7c rgba(255,255,255,0) rgba(255,255,255,0) rgba(255,255,255,0);}
+/*Bg Pass*/
+.jmpassword{background: #e6746a;}
+.jmpassword:after{border-color: #e6746a rgba(255,255,255,0) rgba(255,255,255,0) rgba(255,255,255,0);}
+/*Bg Social*/
+.jmsocial{background: #404241;}
+.jmsocial:after{border-color: #404241 rgba(255,255,255,0) rgba(255,255,255,0) rgba(255,255,255,0);}
+/*Submit*/
+.jmsubmit {background: #e9c85d;}
+.jmsubmit:after{border-color: #e9c85d rgba(255,255,255,0) rgba(255,255,255,0) rgba(255,255,255,0);}
+form#login-form input.inputbox{
+	width: 99%;
+	text-indent: 10px;
+	background: transparent;
+	border: 2px solid #fff;
+}
+::-webkit-input-placeholder {
+   color: #fff;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color:  #fff;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color:  #fff;  
+}
+
+:-ms-input-placeholder {  
+   color:  #fff;  
+}
+form#login-form input[type='submit']{
+	width: 100%;
+	text-transform: uppercase;
+	border: none;
+	color: #fff;
+	background: none;
+	font-size: 18px;
+	padding: 0;
+}
+/*Login------------------*/
+.jmsocial{
+	text-align: center;
+}
+.jmsocial ul{padding: 15px 0;margin:  0;}
+.jmsocial ul li{
+	display: inline-block;
+	list-style: none;
+}
+.jmsocial ul li a{
+	transition: 1s;
+	font-size: 18px;
+	display: block;
+	padding: 5px 0;
+	width: 30px;
+	border-radius: 15px;
+}
+.jmsocial ul li a:hover{color: #fff;background:  #cc6054;}
+/*Register------------------*/
+.jmregister
