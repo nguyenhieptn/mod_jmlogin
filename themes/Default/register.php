@@ -15,7 +15,7 @@
                                                 <?if($show_recaptcha):?>
                                                                 <?php echo recaptcha_get_html($publickey); ?>
                                                 <?endif;?>
-                                                <label class="jm-wrap">Filds width(*) are required</label>
+                                                <label class="jm-wrap">Filds width(*) are required</label> 
                                         
 					<div class="jmsubmit"><input type="submit" name="register" id="jm-register-btn" class="btn-jm-submit" value="Register"/></div>
 					
