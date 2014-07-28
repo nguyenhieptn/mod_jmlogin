@@ -35,11 +35,11 @@ $result = array();
 //echo $private_key;
 $result = array('status'=>'ok', 'error'=>'');
 $data = array();
-$data['name'] = JRequest::getVar('register_name','');
-$data['username'] = JRequest::getVar('register_username','');
-$data['password'] = JRequest::getVar('register_pass','');
-$data['password2'] = JRequest::getVar('register_pass_verify','');
-$data['email'] = JRequest::getVar('register_email','');
+$data['name'] = JRequest::getVar('name','');
+$data['username'] = JRequest::getVar('username','');
+$data['password'] = JRequest::getVar('password','');
+$data['password2'] = JRequest::getVar('password2','');
+$data['email'] = JRequest::getVar('emailaddress','');
 
 if(strlen($data['name']) < 5){
 	$result['status'] = 'failed';
