@@ -1,40 +1,28 @@
 body{background: url(../images/bgbody.jpg) no-repeat center top;}
 .jm_login  a{
 	color: #fff;
-	text-decoration: none;
-	display: block;
-	font-size: 11px;
-}
-.jmlayout7{
-	width: 300px;
+	text-decoration: none;}
+.jmlayout9{
+	width: 600px;
 	margin: 0 auto;
 	position: relative;
 	top: 100px;
 	line-height: 1;
 	font-family: cursive;
-	border: 1px solid #c7d2bc;
-	border-radius: 5px;
-	box-shadow: 1px 3px 5px #889d80;
+	background: transparent;
+
 }
-.jmlayout7:after {
-  content: "";
-  background: #fff;
-  opacity: 0.3;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;   
-}
+
 .jm_login .jminner{
 	padding: 20px 30px;
 	color:#fff;
+	text-align: center;
 }
 .jm_login .jmwidth{
 	width: 50%;
 	float: left;
 }
+
 /*form*/
 .jm_login form#login-form{margin: 15px 0;}
 .jm_login form#login-form div.input{
