@@ -50,6 +50,7 @@ height: 50px;
 	background: #4fc5ad;
 	padding: 12px 0 13px;
 	width: 15%;	
+	float: left;
 }
 .jm_login .jm_remember input{margin:0;}
 .jm_login .jm-login-footer{overflow: hidden;}
