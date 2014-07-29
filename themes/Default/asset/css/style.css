@@ -32,7 +32,7 @@ height: 50px;
 .jm_login form#login-form input.inputbox{
 	width: 100%;
 	text-indent: 10px;
-	background: #e8e8e8;color: #4f4f4f;
+	background: #e8e8e8;color: #4f4f4f;border-radius: inherit;
 }
 .jm_login form#login-form input[type='submit']{
 	width: 100%;
@@ -43,12 +43,12 @@ height: 50px;
 }
 
 /*Login------------------*/
-.jm_login form#login-form input.inputbox{width: 85%;}
+#jmlogin form#login-form input.inputbox{width: 85%;}
 .jm_login form#login-form span{
 	display: inline-block;
 	text-align: center;
 	background: #4fc5ad;
-	padding: 15px 0;
+	padding: 12px 0 13px;
 	width: 15%;	
 }
 .jm_login .jm_remember input{margin:0;}
