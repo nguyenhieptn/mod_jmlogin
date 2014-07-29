@@ -39,7 +39,7 @@ height: 50px;
 	background: #4fc5ad;
 	text-transform: uppercase;
 	font-weight: bold;
-	box-shadow: 0px 3px #3a8974;
+	box-shadow: 0px 3px #3a8974;height: auto;
 }
 
 /*Login------------------*/
