@@ -6,7 +6,7 @@ body{background: url(../images/bgbody.jpg) no-repeat center top;}
 	width: 600px;
 	margin: 0 auto;
 	position: relative;
-	top: 100px;
+	top: 60px;
 	line-height: 1;
 	font-family: cursive;
 	background: transparent;
@@ -28,6 +28,7 @@ body{background: url(../images/bgbody.jpg) no-repeat center top;}
 .jm_login form#login-form div.input{
 	margin-bottom: 15px;
 	position: relative;
+	display: inline-block;
 }
 .jm_login form#login-form input{
 	color: #fff;
@@ -37,18 +38,16 @@ body{background: url(../images/bgbody.jpg) no-repeat center top;}
 	outline: none;
 }
 .jm_login form#login-form input.inputbox{
-	width: 82%;
 	background: transparent;
 	padding: 10px 10px 10px 30px;
-	border: 1px solid #c2cfb7;
+	border: 1px solid #eed6bb;
 	border-radius: 5px;
 	transition: 1s;
-	box-shadow: inset 0px 0px 3px #9cab8f;
 
 }
 .jm_login form#login-form input.inputbox:hover,
 .jm_login form#login-form input.inputbox:focus{
-	border-color: #91c46c;
+	border-color: #b7bac3;
 }
 ::-webkit-input-placeholder {
    color: #fff;
@@ -66,26 +65,17 @@ body{background: url(../images/bgbody.jpg) no-repeat center top;}
    color:  #fff;  
 }
 .jm_login form#login-form input[type='submit']{
-	width: 100%;
-	background: #91c46c;
-	font-weight: bold;
-	border: 1px solid #91c46c;
-	color: #fff;
-	margin-bottom: 15px;
-	border-radius: 5px;
-	box-shadow: inset 0px 1px 1px #c8e5b3;
+	background:#ff6600;
+font-weight: bold;
+border: 1px solid #ff6600;
+color: #fff;
+margin-bottom: 15px;
+border-radius: 5px;
+padding: 10px
 }
 .jm_login .jmform_bottom{overflow: hidden;}
 /*Login------------------*/
-.jm_login form#login-form .input span{
-	display: inline-block;
-	text-align: center;
-	padding: 0;
-	color: #fff;
-	position: absolute;
-	top: 25%;
-	left: 5%;
-}
+
 .jm_login .jmsocial{
 	text-align: center;
 }
@@ -97,11 +87,15 @@ body{background: url(../images/bgbody.jpg) no-repeat center top;}
 .jm_login .jmsocial ul li a{
 	transition: 1s;
 	font-size: 18px;
-	background: #fff;
-	color: #73a84c;
+	color: #fff;
 	padding: 5px;
 	width: 20px;
 	border-radius: 20px;
+	display: inline-block;
 }
-.jm_login .jmsocial ul li a:hover {color: #fff;background: #73a84c;}
-/*Register------------------*/
+.jm_login .jmsocial ul li a:hover {color: #ff6600;background: #fff}
+/*reponesive------------------*/
+@media (max-width: 640px) {
+	.jmlayout9{width: auto;}
+	.jm_login form#login-form div.input{display: block;}
+}
