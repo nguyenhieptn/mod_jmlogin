@@ -14,10 +14,11 @@
 defined('_JEXEC') or die('Restricted access');
 // include the helper file
 require_once( dirname(__FILE__) . DIRECTORY_SEPARATOR . 'helper.php' );
+require_once( dirname(__FILE__) . DIRECTORY_SEPARATOR .'assets'.DIRECTORY_SEPARATOR.'captcha'.DIRECTORY_SEPARATOR.'captcha.php' );
 
 //params
 $label_login = $params->get('tag_login_modal');
-$show_recaptcha = $params->get('show_recaptcha',0);
+$show_recaptcha = $params->get('show_captcha',0);
 $show_formlabel = $params->get('show_formlabel',0);
 $show_close_btn = $params->get('show_close_btn',true);
 $modal_scroll = $params->get('modal_scroll',true);
@@ -65,5 +66,28 @@ if (file_exists($custom_css)) {
 } else {
     $doc->addStylesheet(JURI::base(true) . '/modules/mod_jmlogin/assets/css/mod_jmlogin_'.'default'.'.css');
 }
+
+// Captcha
+
+$captcha_format = $params->get('captcha_format', 'png');
+$captcha_width = $params->get('captcha_width', 100);
+$captcha_height = $params->get('captcha_height', 40);
+$captcha_font_min = $params->get('captcha_font_min', 11);
+$captcha_font_max = $params->get('captcha_font_max', 14);
+$captcha = JXCaptcha::getInstance('image', array(
+            'filePath'	=> JPATH_SITE.DIRECTORY_SEPARATOR.'modules'.DIRECTORY_SEPARATOR.'mod_jmlogin'.DIRECTORY_SEPARATOR.'assets'.DIRECTORY_SEPARATOR.'captcha'.DIRECTORY_SEPARATOR.'images',
+            'format'	=> $captcha_format,
+            'width'	=> $captcha_width,
+            'height'	=> $captcha_height,
+            'minFont'	=> $captcha_font_min,
+            'maxFont'	=> $captcha_font_max
+        )
+    );
+if (!$captcha->test() || !$captcha->initialize()) {
+    // either the test failed or the object could not initialize, raise an error and return
+    JError::raiseWarning(500, $captcha->getError());
+}
+$captcha->clean();
+$return_captcha = $captcha->create();
 require JModuleHelper::getLayoutPath('mod_jmlogin', 'default');
 ?>

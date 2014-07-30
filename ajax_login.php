@@ -34,6 +34,7 @@ if($login){
 		$menu = $app->getMenu();
 		$item = $menu->getItem($moduleParams->login);
 		$result['redirect'] = str_replace('/modules/mod_jmlogin','',JRoute::_($item->link));
+                
 	}else{
 		$result['redirect'] = '';
 	}
