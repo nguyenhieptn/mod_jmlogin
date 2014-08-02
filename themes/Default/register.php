@@ -2,7 +2,7 @@
 	<div id="jmregister" class="jmdefault jmregister jm_login ">
 		<div class="jminner">
 			<div class="jmuser_images"><span><i class="fa fa-pencil"></i></span></div>
-			<form method="POST" id="form-register" class="form-horizontal"  action="<?php print JURI::root(true)?>/modules/mod_jmlogin/ajax_register.php" >
+			<form method="POST" id="login-form" class="form-horizontal" id="jm-form-register" action="<?php print JURI::root(true)?>/modules/mod_jmlogin/ajax_register.php" >
 				
 				<div class="userdata">
 					<input type="text" id="register_name" class="inputbox" name="name" placeholder="Name"/>
@@ -12,21 +12,10 @@
 					<input type="text" id="register_email_address" class="inputbox" name="emailaddress" placeholder="Email Adress"/>
 					<input type="text" id="register_confirm_email_address" class="inputbox" name="confirmeamiladdress" placeholder="Confirm Email Address"/>
                                        
-                                        <?php if($show_recaptcha):?>
-                                        <div class="captcha">
-                                            <div style="min-width: 13em; padding: 0 5px;">
-                                                <label id="captcha-lbl" for="captcha">
-                                                    <img src="<?php echo JURI::base( true ); ?>/modules/mod_jmlogin/assets/captcha/images/<?php echo $return_captcha['file'];?>" alt="" id="captcha_img" />
-                                                    <span class="star">&nbsp;*</span>
-                                                </label>
-                                            </div>
-                                            <div style="padding-top: 8px;">
-                                                <input type="text" id="captcha" name="<?php echo $return_captcha['id']; ?>" class="required" size="10" />
-                                            </div>
-                                            <div style="padding: 11px 0 0 4px;"><?php //echo JText::_('AJAXREG_CAPTCHA'); ?></div>
-                                        </div>
-                                        <?php endif;?>
-                                        <label class="jm-wrap">Filds width(*) are required</label> 
+                                                <?if($show_recaptcha):?>
+                                                                <?php echo recaptcha_get_html($publickey); ?>
+                                                <?endif;?>
+                                                <label class="jm-wrap">Filds width(*) are required</label> 
                                         
 					<div class="jmsubmit"><input type="submit" name="register" id="jm-register-btn" class="btn-jm-submit" value="Register"/></div>
 					
