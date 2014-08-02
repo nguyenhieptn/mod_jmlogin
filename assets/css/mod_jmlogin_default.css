@@ -10,7 +10,7 @@
 	background: url('../images/close_btn.png') no-repeat 0 0;
 }
 .jmmodal{
-	/*background: #fff;*/
+	background: #fff;
 	display:none;
 	position: fixed;
 	left: 300px;
@@ -53,10 +53,10 @@
 .clear{
 	clear:both;
 }
-/*.jmmodal{
+.jmmodal{
 	background:#fafafa;
 	border-radius:4px;
-}*/
+}
 .tab-outer{
 	background: url('../images/lineshort.png') repeat-x center bottom !important;
 }
