@@ -13,7 +13,7 @@
 
         var defaultVal = {
             width: 500,
-            height: 400,
+            height: modal_height,
             top: 20,
             scroll: 'false',
             title: '',

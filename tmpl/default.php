@@ -32,10 +32,12 @@ $remember_me = $params->get('jmlogin-remember-me', 0);
 <script type="text/javascript">
 var jm_login_base_url = '<?php print JURI::root(true);?>';
 </script>
+ 
 <script type="text/javascript" src="<?php echo JURI::base(true).'/modules/mod_jmlogin/assets/js/jquery.tinyscrollbar.min.js';?>"></script>
 <script type="text/javascript" src="<?php echo JURI::base(true).'/modules/mod_jmlogin/assets/js/jmmodal.js';?>"></script>
 <script type="text/javascript" src="<?php echo JURI::base(true).'/modules/mod_jmlogin/assets/js/jmtab.js';?>"></script>
 <script type="text/javascript" src="<?php echo JURI::base(true).'/modules/mod_jmlogin/assets/js/jmlogin.js';?>"></script>
+ 
 <!-- START Jm Login MODULE -->
 <div class="moduletable<?php echo $moduleclass_sfx;?>">
     <?php if ($name) { ?>
@@ -70,7 +72,7 @@ var jm_login_base_url = '<?php print JURI::root(true);?>';
         <div class="btn-jm-group" id="btn-action">
             <a class="jm-login-link-modal link-login" href="#jmmodal" data-tabid="#jmlogin" data-tab="jmtab" data-toggle="jmmodal"><i class="icon-user"></i><?php echo $label_login; ?></a>
             <?php if ($register_tab): ?>
-                <a class="jm-login-link-modal link-registet" href="#jmmodal" data-tabid="#jmregister" data-tab="jmtab" data-toggle="jmmodal"><?php echo $label_register; ?></a>
+            <a class="jm-login-link-modal link-registet" href="#jmmodal" data-tabid="#jmregister" data-tab="jmtab" data-toggle="jmmodal"><?php echo $label_register; ?></a>
             <?php endif; ?>
         </div>
     <?php } ?>
@@ -93,6 +95,7 @@ var jm_login_base_url = '<?php print JURI::root(true);?>';
 </div>
 <!-- END Jm Login MODULE -->
 <script type="text/javascript">
+ 
 jQuery(document).ready(function($){
 	$('.jmlogin_username').click(function(){
 		$('.jmlogin_logout_btn_wrap').toggle();

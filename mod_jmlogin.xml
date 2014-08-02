@@ -201,15 +201,7 @@
                     type="text" class="jm-field"
                                 label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
                                 description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
-                <field
-                    name="show_recaptcha"
-                    type="radio" class="jm-field"
-								default="0"
-                                label="JMLOGIN_SHOW_REACAPTCHA_LBL"
-                                description="JMLOGIN_SHOW_REACAPTCHA_DESC" >
-								<option value="1">JYES</option>
-								<option value="0">JNO</option>
-                </field>
+               
 				<field
                     name="show_close_btn"
                     type="radio" class="jm-field"
@@ -235,7 +227,7 @@
                                 description="JMLOGIN_MODAL_WIDTH_DESC" />
 				<field
                     name="modal_height"
-                    type="text" class="jm-field" default="390"
+                    type="text" class="jm-field" default=""
                                 label="JMLOGIN_MODAL_HEIGHT_LBL"
                                 description="JMLOGIN_MODAL_HEIGHT_DESC" />
 				<field
@@ -317,6 +309,26 @@
                 
                 <field addfieldpath="/modules/mod_jmlogin/admin/elements" type="asset" name="asset" path="modules/mod_jmlogin/admin/assets/" />
             </fieldset>	
+            <fieldset name="Captcha">
+                 <field
+                    name="show_captcha"
+                    type="radio" class="jm-field"
+								default="0"
+                                label="JMLOGIN_SHOW_REACAPTCHA_LBL"
+                                description="JMLOGIN_SHOW_REACAPTCHA_DESC" >
+								<option value="1">JYES</option>
+								<option value="0">JNO</option>
+                </field>
+                <field name="captcha_format" type="list" default="png" label="AR_CAPTCHA_FORMAT" description="AR_CAPTCHA_FORMAT_DESC">
+			<option value="png">png</option>
+			<option value="gif">gif</option>
+			<option value="jpeg">jpeg</option>
+		</field>
+		<field name="captcha_width" type="text" size="6" default="100" label="AR_CAPTCHA_WIDTH" description="AR_CAPTCHA_WIDTH_DESC" />
+		<field name="captcha_height" type="text" size="6" default="40" label="AR_CAPTCHA_HEIGHT" description="AR_CAPTCHA_HEIGHT_DESC" />
+		<field name="captcha_font_min" type="text" size="6" default="11" label="AR_CAPTCHA_FONT_MIN" description="AR_CAPTCHA_FONT_MIN_DESC" />
+		<field name="captcha_font_max" type="text" size="6" default="14" label="AR_CAPTCHA_FONT_MAX" description="AR_CAPTCHA_FONT_MAX_DESC" />
+            </fieldset>
         </fields>
     </config>
 </extension>
