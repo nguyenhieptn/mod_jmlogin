@@ -62,9 +62,11 @@ $custom_css = JPATH_SITE . '/templates/' . modJmloginHelper::getTemplate() . '/c
 
 //
 if (file_exists($custom_css)) {
-    $doc->addStylesheet(JURI::base(true) . '/templates/' . modJmloginHelper::getTemplate() . '/css/' . $module->module.'_'. 'default' . '.css');
+    $doc->addStylesheet(JURI::base(true) . '/templates/' . modJmloginHelper::getTemplate() . '/css/' . $module->module.'.css');
+    $doc->addStylesheet(JURI::base(true) . '/templates/' . modJmloginHelper::getTemplate() . '/css/' . $module->module.'_'. $theme . '.css');
 } else {
-    $doc->addStylesheet(JURI::base(true) . '/modules/mod_jmlogin/assets/css/mod_jmlogin_'.'default'.'.css');
+    $doc->addStylesheet(JURI::base(true) . '/modules/mod_jmlogin/assets/css/mod_jmlogin.css');
+    $doc->addStylesheet(JURI::base(true) . '/modules/mod_jmlogin/assets/css/mod_jmlogin_'.$theme.'.css');
 }
 $doc->addStyleSheet(JURI::base(true) . '/modules/mod_jmlogin/assets/css/font-awesome.min.css');
 // Captcha

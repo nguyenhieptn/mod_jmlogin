@@ -39,7 +39,7 @@ var jm_login_base_url = '<?php print JURI::root(true);?>';
 <script type="text/javascript" src="<?php echo JURI::base(true).'/modules/mod_jmlogin/assets/js/jmlogin.js';?>"></script>
  
 <!-- START Jm Login MODULE -->
-<div class="moduletable<?php echo $moduleclass_sfx;?>">
+<div class="jmlogins <?php echo $moduleclass_sfx; ?>  <?php echo $theme ? ' ' . $theme : '' ?>" id="jmnewspro-<?php print $module->id; ?>">
     <?php if ($name) { ?>
         <div class="btn-jm-group" > 
 			<div class='jmlogin_dropdown_after'>
