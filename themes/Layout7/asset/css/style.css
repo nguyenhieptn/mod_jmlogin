@@ -1,0 +1,119 @@
+body{background: url(../images/bgbody.jpg) no-repeat center top;}
+.jm_login  a{
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	font-size: 11px;
+}
+.jmlayout7{
+	width: 300px;
+	margin: 0 auto;
+	position: relative;
+	top: 100px;
+	line-height: 1;
+	font-family: cursive;
+	border: 1px solid #c7d2bc;
+	border-radius: 5px;
+	box-shadow: 1px 3px 5px #889d80;
+}
+.jmlayout7:after {
+  content: "";
+  background: #fff;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+.jm_login .jminner{
+	padding: 20px 30px;
+	color:#fff;
+}
+.jm_login .jmwidth{
+	width: 50%;
+	float: left;
+}
+/*form*/
+.jm_login form#login-form{margin: 15px 0;}
+.jm_login form#login-form div.input{
+	margin-bottom: 15px;
+	position: relative;
+}
+.jm_login form#login-form input{
+	color: #fff;
+	padding: 10px 0;
+	margin: 0;
+	border: none;
+	outline: none;
+}
+.jm_login form#login-form input.inputbox{
+	width: 82%;
+	background: transparent;
+	padding: 10px 10px 10px 30px;
+	border: 1px solid #c2cfb7;
+	border-radius: 5px;
+	transition: 1s;
+	box-shadow: inset 0px 0px 3px #9cab8f;
+
+}
+.jm_login form#login-form input.inputbox:hover,
+.jm_login form#login-form input.inputbox:focus{
+	border-color: #91c46c;
+}
+::-webkit-input-placeholder {
+   color: #fff;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color:  #fff;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color:#fff;  
+}
+
+:-ms-input-placeholder {  
+   color:  #fff;  
+}
+.jm_login form#login-form input[type='submit']{
+	width: 100%;
+	background: #91c46c;
+	font-weight: bold;
+	border: 1px solid #91c46c;
+	color: #fff;
+	margin-bottom: 15px;
+	border-radius: 5px;
+	box-shadow: inset 0px 1px 1px #c8e5b3;
+}
+.jm_login .jmform_bottom{overflow: hidden;}
+/*Login------------------*/
+.jm_login form#login-form .input span{
+	display: inline-block;
+	text-align: center;
+	padding: 0;
+	color: #fff;
+	position: absolute;
+	top: 25%;
+	left: 5%;
+}
+.jm_login .jmsocial{
+	text-align: center;
+}
+.jm_login  ul{padding: 0;margin: 5px 0;}
+.jm_login  ul li{
+	display: inline-block;
+	list-style: none;
+}
+.jm_login .jmsocial ul li a{
+	transition: 1s;
+	font-size: 18px;
+	background: #fff;
+	color: #73a84c;
+	padding: 5px;
+	width: 20px;
+	border-radius: 20px;
+}
+.jm_login .jmsocial ul li a:hover {color: #fff;background: #73a84c;}
+/*Register------------------*/
