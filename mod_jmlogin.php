@@ -66,7 +66,7 @@ if (file_exists($custom_css)) {
 } else {
     $doc->addStylesheet(JURI::base(true) . '/modules/mod_jmlogin/assets/css/mod_jmlogin_'.'default'.'.css');
 }
-
+$doc->addStyleSheet(JURI::base(true) . '/modules/mod_jmlogin/assets/css/font-awesome.min.css');
 // Captcha
 
 $captcha_format = $params->get('captcha_format', 'png');

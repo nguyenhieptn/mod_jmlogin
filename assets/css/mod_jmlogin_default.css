@@ -263,3 +263,80 @@ a.social img{
 	left:-1000px;
 	top:-1000px;	
 }
+/*default layout*/
+.jm_login a{
+	color: #fff;
+	text-decoration: none;
+}
+.jmdefault{
+	margin: 0 auto;
+	background: #1d9e74;
+	position: relative;
+	line-height: 1;
+}
+.jm_login .jminner{
+	padding: 20px 30px;
+	color: #fff
+}
+.jm_login .jmuser_images{
+	text-align: center;
+}
+.jm_login .jmuser_images span{
+	display: block;
+margin: 0 auto;
+background: #fff;
+width: 50px;
+border-radius: 30px;
+padding: 5px;
+height: 50px;
+}
+.jm_login .jmuser_images i{color: #1d9e74;font-size: 50px;}
+/*form*/
+.jm_login form#login-form{margin: 15px 0;}
+
+.jm_login form#login-form input{border: none;color: #fff;padding: 10px 0;margin:0 0 15px 0;}
+.jm_login form#login-form input.inputbox{
+	width: 100%;
+	text-indent: 10px;
+	background: #e8e8e8;color: #4f4f4f;border-radius: inherit;
+}
+.jm_login form#login-form input[type='submit']{
+	width: 100%;
+	background: #4fc5ad;
+	text-transform: uppercase;
+	font-weight: bold;
+	box-shadow: 0px 3px #3a8974;height: auto;
+}
+
+/*Login------------------*/
+#jmlogin form#login-form input.inputbox{width: 85%;}
+.jm_login form#login-form span{
+	display: inline-block;
+	text-align: center;
+	background: #4fc5ad;
+	padding: 12px 0 13px;
+	width: 15%;	
+	float: left;
+}
+.jm_login .jm_remember input{margin:0;}
+.jm_login .jm-login-footer{overflow: hidden;}
+.jm_login .jm-login-footer a{display: block;}
+.jm_login .jmwidth{
+	width: 50%;
+	float: left;
+}
+.jm_login .jmsocial{
+	text-align: center;
+}
+.jm_login .jmsocial ul{padding: 0;margin: 5px 0;}
+.jm_login .jmsocial ul li{
+	display: inline-block;
+	list-style: none;
+}
+.jm_login .jmsocial ul li a{transition:1s;background: #1d9e74;padding: 4px;
+font-size: 20px;
+border-radius: 4px;
+width: 20px;}
+.jm_login.jmsocial ul li a:hover{color: #1d9e74;background: #fff;}
+/*Register*/
+.jmregister form#login-form input.inputbox{width: 100%;}

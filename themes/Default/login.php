@@ -1,8 +1,3 @@
-<?php 
-    $doc=  JFactory::getDocument();
-    $doc->addStyleSheet(JURI::base(true) . '/modules/mod_jmlogin/themes/Default/asset/css/style.css');
-    $doc->addStyleSheet(JURI::base(true) . '/modules/mod_jmlogin/themes/Default/asset/css/font-awesome.min.css');
-?>
 	<div id="jmlogin" class="jmdefault jmlogin jm_login">
 		<div class="jminner">
 			<div class="jmuser_images"><span><i class="fa fa-user"></i></span></div>
