@@ -1,3 +1,6 @@
+<?php 
+defined('_JEXEC') or die('Restricted access');
+?>
 <div id="jmregister" class="jmlayout1 jmregister jm_login">
 		<div class="jminner">
 			<div class="jmuser_images"><span><i class="fa fa-pencil"></i></span></div>

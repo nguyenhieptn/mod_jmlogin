@@ -1,7 +1,5 @@
 <?php 
-    $doc=  JFactory::getDocument();
-    $doc->addStyleSheet(JURI::base(true) . '/modules/mod_jmlogin/themes/Layout1/asset/css/style.css');
-    $doc->addStyleSheet(JURI::base(true) . '/modules/mod_jmlogin/themes/Layout1/asset/css/font-awesome.min.css');
+defined('_JEXEC') or die('Restricted access');
 ?>
 	<div id="jmlogin" class="jmlayout1 jmlogin jm_login">
 		<div class="jminner">

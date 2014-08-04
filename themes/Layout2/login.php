@@ -1,8 +1,6 @@
-<?php
-$doc =JFactory::getDocument();
-$doc-> addStylesheet('modules/mod_jmlogin/themes/Layout2/asset/css/jm_login_layout2.css') 
+<?php 
+defined('_JEXEC') or die('Restricted access');
 ?>
-
 
 <div id="jmlogin" class="jmlayout2 jm_login">
 	<div class="jminner">
