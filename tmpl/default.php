@@ -55,13 +55,8 @@ var jm_login_base_url = '<?php print JURI::root(true);?>';
                     <form class="form_logout" action="index.php" method="POST">
                         <input type="hidden" name="Submit" class="button" value="<?php echo JText::_('Logout'); ?>" />
                         <input type="hidden" name="option" value="com_users" />
-                        <input type="hidden" name="task" value="user.logout" />
-                        <?php
-                        if ($logout_redirect <> "") {
-                            $menuItem = $menu->getItem($logout_redirect);
-                            ?><input type="hidden" name="return" value="<?php echo base64_encode(JRoute::_($menuItem->link)); ?>" /><?php
-                }
-                        ?>
+    					<input type="hidden" name="task" value="user.logout" />
+                        <input type="hidden" name="return" value="<?php echo $logout_redirect; ?>" />
                         <?php echo JHtml::_('form.token'); ?>
                     </form>
                 </li>
@@ -95,7 +90,12 @@ var jm_login_base_url = '<?php print JURI::root(true);?>';
 </div>
 <!-- END Jm Login MODULE -->
 <script type="text/javascript">
- 
+var jmOpt = 
+{
+	JM_AJAX					:'<?php echo addslashes(JURI::getInstance()->toString()); ?>',
+	JM_LOGIN_RETURN				:'<?php echo addslashes($return_login_decode); ?>',
+    JM_LOGOUT_RETURN				:'<?php echo addslashes($return_logout_decode); ?>',
+}
 jQuery(document).ready(function($){
 	$('.jmlogin_username').click(function(){
 		$('.jmlogin_logout_btn_wrap').toggle();

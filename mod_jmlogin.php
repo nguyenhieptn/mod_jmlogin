@@ -51,11 +51,31 @@ $captcha = $params->get('error_wrong_capcha_register', 'Error: Wrong capcha');
 $success = $params->get('mess_successfully_register_register', 'Successfully register, check mail (spam) activation account.');
 $nexist = $params->get('mess_account_not_exists_regainpass', 'Note: Account not exists');
 $check = $params->get('mess_check_mail_regainpass', 'Note: Please check mail to retrieve your password.');
-
+//
+if(JRequest::getVar("jmtask")){
+	modJmloginHelper::jmajax();
+}
 //
 require_once JPATH_SITE . '/modules/mod_jmlogin/assets/recapcha/recaptchalib.php';
 $login = new modJmloginHelper();
 $login = $login->getLogin($params);
+// url return after form post
+$user =  JFactory::getUser();
+$type= (!$user->get('guest')) ? 'logout' : 'login';
+if($login_redirect<>""){
+    $login_redirect = modJmloginHelper::getLoginUrlReturn($params);
+}else{
+    $login_redirect = modJmloginHelper::getURLReturn( $params, $type );
+}
+if($logout_redirect<>""){
+    $logout_redirect = modJmloginHelper::getLogoutUrlReturn($params);
+}else{
+    $logout_redirect = modJmloginHelper::getURLReturn( $params, $type );
+}
+$return_login_decode = base64_decode($login_redirect);
+$return_logout_decode = base64_decode($logout_redirect);
+//$register_return = modJmloginHelper::getURLReturn( $params, $type );
+
 $doc = JFactory::getDocument();
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
 $custom_css = JPATH_SITE . '/templates/' . modJmloginHelper::getTemplate() . '/css/' . $module->module.'_'.'default'.'.css';
