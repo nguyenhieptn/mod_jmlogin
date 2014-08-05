@@ -135,7 +135,7 @@ JM(document).ready(function(){
     				   JM("#form-register").children("div").hide();
     				   JM("#jm-success").html(html);	
     				   JM("#jm-success").show();	
-    				   //setTimeout(function() {window.location.reload();},34000);
+    				   setTimeout(function() {window.location.reload();},6000);
     			   }
     		   },
     		   error: function (XMLHttpRequest, textStatus, errorThrown) {
