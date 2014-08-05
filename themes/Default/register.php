@@ -1,15 +1,15 @@
-	<div id="jmregister" class="jmdefault jmregister jm_login ">
-		<div class="jminner">
-			<div class="jmuser_images"><span><i class="fa fa-pencil"></i></span></div>
+	<div id="jm-register" class="jm-default jm-register jm_login ">
+		<div class="jm-inner">
+			<div class="jm-user-images"><span><i class="fa fa-pencil"></i></span></div>
 			<form method="POST" id="form-register" class="form-horizontal"  action="<?php print JURI::root(true)?>/modules/mod_jmlogin/ajax_register.php" >
 				
 				<div class="userdata">
-					<input type="text" id="register_name" class="inputbox" name="name" placeholder="Name"/>
-					<input type="text" id="register_username" class="inputbox" name="username" placeholder="User Name"/>
-					<input type="password" id="register_pass" class="inputbox" name="password" placeholder="Password"/>
-					<input type="text" id="register_confirm_pass" class="inputbox" name="password2" placeholder="Confirm Password"/>
-					<input type="text" id="register_email_address" class="inputbox" name="emailaddress" placeholder="Email Adress"/>
-					<input type="text" id="register_confirm_email_address" class="inputbox" name="confirmeamiladdress" placeholder="Confirm Email Address"/>
+					<input type="text" id="jm-input-name" class="inputbox" name="name" placeholder="Name"/>
+					<input type="text" id="jm-input-username" class="inputbox" name="username" placeholder="User Name"/>
+					<input type="password" id="jm-input-pass" class="inputbox" name="password" placeholder="Password"/>
+					<input type="text" id="jm-input-confirm-ass" class="inputbox" name="password2" placeholder="Confirm Password"/>
+					<input type="text" id="jm-input-email" class="inputbox" name="email" placeholder="Email Adress"/>
+					<input type="text" id="jm-input-confirm-email" class="inputbox" name="confirmeamil" placeholder="Confirm Email Address"/>
                                        
                                         <?php if($show_recaptcha):?>
                                         <div class="captcha">
