@@ -8,12 +8,12 @@ defined('_JEXEC') or die('Restricted access');
 			<form method="POST" id="login-form">
 				
 				<div class="userdata">
-					<input type="text" id="register_name" class="inputbox" name="name" placeholder="Name"/>
-					<input type="text" id="register_username" class="inputbox" name="username" placeholder="User Name"/>
-					<input type="password" id="registerpass" class="inputbox" name="password" placeholder="Password"/>
-					<input type="text" id="register_confirm_pass" class="inputbox" name="username" placeholder="Confirm Password"/>
-					<input type="text" id="register_email_address" class="inputbox" name="emailaddress" placeholder="Email Adress"/>
-					<input type="text" id="register_confirm_email_address" class="inputbox" name="confirmeamiladdress" placeholder="Confirm Email Address"/>
+					<input type="text" id="jm-input-name" class="inputbox" name="name" placeholder="Name"/>
+					<input type="text" id="jm-input-username" class="inputbox" name="username" placeholder="User Name"/>
+					<input type="password" id="jm-input-pass" class="inputbox" name="password" placeholder="Password"/>
+					<input type="text" id="jm-input-confirm-pass" class="inputbox" name="username" placeholder="Confirm Password"/>
+					<input type="text" id="jm-input-email" class="inputbox" name="email placeholder="Email Adress"/>
+					<input type="text" id="jm-input-confirm-email" class="inputbox" name="confirmeamil" placeholder="Confirm Email Address"/>
 				
 					<div class="jmsubmit"><input type="submit" name="register" id="jm-register-btn" class="btn-jm-submit" value="Register"/></div>
 					

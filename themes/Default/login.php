@@ -15,13 +15,13 @@
 						<span><i class="fa fa-lock"></i></span>
 						<input type="password" id="jm-input-password" class="inputbox" name="password" placeholder="<?php echo $field_password; ?>"/>
 					</div>
-					 <?php if (JPluginHelper::isEnabled('system', 'remember')) : ?>
+					<?php if (JPluginHelper::isEnabled('system', 'remember')) : ?>
                     <div class="jm-remember">
 						<p><?php echo JText::_('MOD_JM_LOGIN_REMEMBER');?><input id="jm-checkbox-remember" type="checkbox" name="remember"  value="yes"/></p>
 					</div>
                     <?php endif; ?>
 					<div class="jm-submit">
-                        <input type="submit" name="login" id="jm-login-btn"  class="jm-btn-submit" value="Sign me in"/>
+                        <input type="submit" name="login" id="jm-login-btn"  class="jm-btn-submit" value="<?php echo JText::_('MOD_JM_LOGIN_LOGIN');?>"/>
                         <input type="hidden" name="option" value="com_users" />
     					<input type="hidden" name="task" value="user.login" /> 
     					<input type="hidden" name="return" id="jm_return"	value="<?php echo $return; ?>" />

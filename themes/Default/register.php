@@ -7,11 +7,11 @@
 					<input type="text" id="jm-input-name" class="inputbox" name="name" placeholder="Name"/>
 					<input type="text" id="jm-input-username" class="inputbox" name="username" placeholder="User Name"/>
 					<input type="password" id="jm-input-pass" class="inputbox" name="password" placeholder="Password"/>
-					<input type="text" id="jm-input-confirm-ass" class="inputbox" name="password2" placeholder="Confirm Password"/>
+					<input type="text" id="jm-input-confirm-pass" class="inputbox" name="password2" placeholder="Confirm Password"/>
 					<input type="text" id="jm-input-email" class="inputbox" name="email" placeholder="Email Adress"/>
 					<input type="text" id="jm-input-confirm-email" class="inputbox" name="confirmeamil" placeholder="Confirm Email Address"/>
                                        
-                                        <?php if($show_recaptcha):?>
+                                        <?php if($show_recaptcha):?> 
                                         <div class="captcha">
                                             <div style="min-width: 13em; padding: 0 5px;">
                                                 <label id="captcha-lbl" for="captcha">
