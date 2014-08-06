@@ -1,0 +1,102 @@
+.jm_login  a{
+	color: #fff;
+	text-decoration: none;
+}
+.jmlayout5{
+	width: 300px;
+	margin: 0 auto;
+	background: #f7f4ef;
+	position: relative;
+	top: 100px;
+	line-height: 1;
+	font-family: cursive;
+	border-radius: 10px;
+}
+.jm_login .jminner{
+	padding: 20px 30px;
+	color:#80807e;
+}
+
+/*form*/
+.jm_login form#login-form{margin: 15px 0;position: relative;}
+.jm_login form#login-form div.input{
+	margin-bottom: 15px;
+	background: #fff;
+	position: relative;
+}
+.jm_login form#login-form input{
+	color: #c3c2be;
+	padding: 10px 0;
+	margin: 0;
+	border: none;
+	outline: none;
+}
+.jm_login form#login-form input.inputbox{
+	width: 82%;
+	background: #fff;
+	padding: 10px 10px 10px 30px;
+	border-left: 2px solid transparent;
+	transition: 1s;
+}
+.jm_login form#login-form input.inputbox:hover,
+.jm_login form#login-form input.inputbox:focus{
+	border-left-color: #e6746a;
+}
+::-webkit-input-placeholder {
+   color: #c3c2be;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color:  #c3c2be;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color:#c3c2be;  
+}
+
+:-ms-input-placeholder {  
+   color:  #c3c2be;  
+}
+.jm_login form#login-form input[type='submit']{
+	width: 100%;
+	background: #e6746a;
+	text-transform: uppercase;
+	font-weight: bold;
+	border: none;
+	color: #fff;
+}
+/*Login------------------*/
+.jm_login form#login-form .input span{
+	display: inline-block;
+	text-align: center;
+	background: #fff;
+	padding: 0;
+	color: #c3c2be;
+	position: absolute;
+	top: 25%;
+	left: 5%;
+}
+.jm_login .jm_remember input{margin:0;}
+.jm_login .jm-login-footer{overflow: hidden;}
+.jm_login .jm-login-footer a{display: block;}
+
+.jm_login .jmsocial{
+	text-align: center;
+}
+.jm_login .jmsocial ul{padding: 0;margin: 5px 0;}
+.jm_login .jmsocial ul li{
+	display: inline-block;
+	list-style: none;
+}
+.jm_login .jmsocial ul li a{
+	transition: 1s;
+	font-size: 18px;
+	display: block;
+	background: #fff;
+	color: #cc6054;
+	padding: 5px;
+	width: 20px;
+	border-radius: 20px;
+}
+.jm_login .jmsocial ul li a:hover {color: #fff;background: #cc6054;}
+/*Register------------------*/

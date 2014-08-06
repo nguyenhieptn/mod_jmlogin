@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<title>RegisterDefault</title>
+ 	<link href="asset/css/style.css" rel="stylesheet">
+ 	<link href="asset/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+	<div id="jmdefault" class="jmregister jm_login">
+		<div class="jminner">
+			<form method="POST" id="login-form">
+				
+				<div class="userdata">
+					<div class="jmname input jmbg">
+						<input type="text" id="jm_register_name" class="inputbox" name="name" placeholder="name"/>
+					</div>
+					<div class="jmusername input jmbg">
+						<input type="text" id="jm_register_user_name" class="inputbox" name="userename" placeholder="username"/>
+					</div>
+					<div class="jmpassword input jmbg"><input type="password" id="jm_register_pass" class="inputbox" name="password" placeholder="password"/></div>
+					
+					<div class="jmconfirmpassword input jmbg"><input type="password" id="jm_register_confirm_pass" class="inputbox" name="password" placeholder="confirm password"/></div>
+
+					<div class="jmemailaddress input jmbg"><input type="password" id="jm_register_email_address" class="inputbox" name="password" placeholder="email address"/></div>
+					
+					<div class="jmconfirmemailaddress input jmbg"><input type="password" id="jm_register_confirm_email_address" class="inputbox" name="password" placeholder="confirm email address"/></div>
+					
+				
+					<div class="jmsubmit jm_register"><input type="submit" name="register" id="jm-register-btn" class="btn-jm-submit" value="Register"/></div>
+				
+					
+				</div>
+			
+			</form>
+		</div>
+	</div>
+</body>
+</html>
