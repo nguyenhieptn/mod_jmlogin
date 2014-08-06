@@ -1,5 +1,5 @@
-	<div id="jmregister" class="jmdefault jmregister jm_login ">
-		<div class="jm-inner">
+	<div id="jmregister" class="jmdefault jmregister jm_login aaa">
+		<div class="jm-inner"> 
 			<div class="jm-user-images"><span><i class="fa fa-pencil"></i></span></div>
 			<form method="POST" id="form-register" class="form-horizontal" action="<?php echo JRoute::_('index.php', true); ?>" >
 				<div id="jm-success"></div>
