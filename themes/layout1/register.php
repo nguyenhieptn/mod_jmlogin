@@ -8,12 +8,12 @@ defined('_JEXEC') or die('Restricted access');
 			<form method="POST" id="login-form">
 				<div id="jm-success"></div>
 				<div class="userdata">
-					<input type="text" id="jm-input-name" class="inputbox" name="name" placeholder="Name"/>
-					<input type="text" id="jm-input-user-name" class="inputbox" name="username" placeholder="User Name"/>
-					<input type="password" id="jm-input-pass" class="inputbox" name="password" placeholder="Password"/>
-					<input type="text" id="jm-input-confirm-pass" class="inputbox" name="username" placeholder="Confirm Password"/>
-					<input type="text" id="jm-input-email" class="inputbox" name="email placeholder="Email Adress"/>
-					<input type="text" id="jm-input-confirm-email" class="inputbox" name="confirmeamil" placeholder="Confirm Email Address"/>
+					<input type="text" id="jm-input-name" class="inputbox" name="name" placeholder="<?php echo JText::_('JM_REGISTER_NAME'); ?>"/>
+					<input type="text" id="jm-input-user-name" class="inputbox" name="username" placeholder="<?php echo JText::_('JM_USERNAME'); ?>"/>
+					<input type="password" id="jm-input-pass" class="inputbox" name="password" placeholder="<?php echo JText::_('JM_PASSWORD'); ?>"/>
+					<input type="text" id="jm-input-confirm-pass" class="inputbox" name="username" placeholder="<?php echo JText::_('JM_CONFIRM_PASSWORD'); ?>"/>
+					<input type="text" id="jm-input-email" class="inputbox" name="email" placeholder="<?php echo JText::_('JM_REGISTER_EMAIL_ADDRESS'); ?>"/>
+					<input type="text" id="jm-input-confirm-email" class="inputbox" name="confirmeamil" placeholder="<?php echo JText::_('JM_REGISTER_CONFIRM_EMAIL_ADDRESS'); ?>"/>
 				    <?php if($show_recaptcha):?> 
                                         <div class="captcha">
                                             <div style="min-width: 13em; padding: 0 5px;">
@@ -28,7 +28,6 @@ defined('_JEXEC') or die('Restricted access');
                                             <div style="padding: 11px 0 0 4px;"><?php //echo JText::_('AJAXREG_CAPTCHA'); ?></div>
                                         </div>
                                         <?php endif;?>
-                                        <label class="jm-wrap">Filds width(*) are required</label> 
 					<div class="jm-submit">
 					<input type="submit" name="register" id="jm-register-btn" class="btn-jm-submit" value="Register"/>
 					<input type="hidden" name="task" value="register" />

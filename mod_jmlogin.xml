@@ -8,9 +8,7 @@
     <authorUrl>http://www.joomlaman.com</authorUrl>
     <copyright>Copyright © 2013 - All rights reserved.</copyright>
     <license>GNU General Public License v2.0</license>
-    <description>
-		<![CDATA[]]>
-    </description>
+    <description>MOD_JM_LOGIN_DESCRIPTION</description>
     <files>
         <filename>mod_jmlogin.xml</filename>
         <filename module="mod_jmlogin">mod_jmlogin.php</filename>

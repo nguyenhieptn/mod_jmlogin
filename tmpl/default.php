@@ -15,12 +15,6 @@ defined('_JEXEC') or die('Restricted access');
 $document = JFactory::getDocument();
 $main = JFactory::getApplication();
 $menu = $main->getMenu();
-$style = '
-.controls-label{
-     text-align: ' . $align_option . ';
-}
-';
-$document->addStyleDeclaration($style);
 if ($load_jquery == 1) {
     $document->addScript(JURI::base(true) . '/modules/mod_jmlogin/assets/js/jquery-1.8.3.js');
 }
@@ -65,9 +59,9 @@ var jm_login_base_url = '<?php print JURI::root(true);?>';
 		<div class='clear'></div>
     <?php } else { ?>
         <div class="btn-jm-group" id="btn-action">
-            <a class="jm-login-link-modal link-login" href="#jmmodal" data-tabid="#jmlogin" data-tab="jmtab" data-toggle="jmmodal"><i class="icon-user"></i><?php echo $label_login; ?></a>
+            <a class="jm-login-link-modal link-login" href="#jmmodal" data-tabid="#jmlogin" data-tab="jmtab" data-toggle="jmmodal"><i class="icon-user"></i>Login</a>
             <?php if ($register_tab): ?>
-            <a class="jm-login-link-modal link-registet" href="#jmmodal" data-tabid="#jmregister" data-tab="jmtab" data-toggle="jmmodal"><?php echo $label_register; ?></a>
+            <a class="jm-login-link-modal link-registet" href="#jmmodal" data-tabid="#jmregister" data-tab="jmtab" data-toggle="jmmodal">Register</a>
             <?php endif; ?>
         </div>
     <?php } ?>
