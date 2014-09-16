@@ -31,7 +31,7 @@ class modJmloginHelper {
             $this->confirmEmail($activation);
         }
     }
-    function loadScriptJtext(){
+    public static function loadScriptJtext(){
         JText::script('JM_LOGIN_AUTHENTICATE'); 
         JText::script('JM_REQUIRED_NAME'); 
         JText::script('JM_REQUIRED_USERNAME'); 
@@ -44,7 +44,7 @@ class modJmloginHelper {
         JText::script('JM_EMAIL_NOT_MATCH'); 
         JText::script('JM_CAPTCHA_REQUIRED');
     }
-    function confirmEmail($activation) {
+    public static function confirmEmail($activation) {
         $app = &JFactory::getApplication();
         //echo $activation;
         //$activation=JRequest::getVar('confirmEmail');
@@ -62,7 +62,7 @@ class modJmloginHelper {
         }
     }
 		
-	static function getTemplate(){
+	public static function getTemplate(){
 		$db=JFactory::getDBO();
 		$query=$db->getQuery(true);
 		$query->select('*');
@@ -132,7 +132,7 @@ class modJmloginHelper {
 		return base64_encode($url);
 	}
 
-public static function jmajax(){
+    public static function jmajax(){
 		$mainframe =& JFactory::getApplication('site');
 		$jmtask = JRequest::getVar('jmtask');
 		if($jmtask=='login'){
@@ -509,7 +509,7 @@ public static function jmajax(){
 		return $html;
 	}
     // load config ini file
-    public function loadlThemeData($params)
+    public static function loadlThemeData($params)
     {
         $theme = $params->get('theme','default');
         $ini_file = JPATH_ROOT . DS . "modules" . DS . 'mod_jmlogin' . DS . "themesattr" . DS . $theme . ".ini";
