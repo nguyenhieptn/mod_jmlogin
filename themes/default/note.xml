@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<field name="jm_login_pre_text" type="text" class="jm-field signle" default="" label="Login pretext" description="Login pretext"></field>
+<field name="jm_login_title" type="text" class="jm-field signle" default="" label="Login title" description="Login title"></field>
+<field name="jm_login_button_text" type="text" class="jm-field signle" default="" label="Login button text" description="Login button text"></field>
+<field name="jm_login_post_text" type="text" class="jm-field signle" default="" label="Login posttext" description="Login posttext"></field>
+<field name="jm_login_connect_with" type="text" class="jm-field signle" default="" label="Connect with text" description="Connect with text"></field>
+<field name="jm_register_title" type="text" class="jm-field signle" default="" label="Register title" description="Register title"></field>
+<field name="jm_register_button_text" type="text" class="jm-field signle" default="" label="Register button text" description="Register button text"></field>

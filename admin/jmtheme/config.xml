@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<form>
+	<fields 
+		name="params" 
+		addfieldpath="/modules/mod_jmlogin/elements">
+		<fieldset name="basic">
+			<field 
+				name="jm_login_pre_text" 
+				type="text" 
+				default="Welcome to JM login" 
+				label="Login pretext"
+				description="Login pretext" />
+            <field 
+				name="jm_login_title" 
+				type="text" 
+				default="" 
+				label="Login title"
+				description="Login title" />
+            <field 
+				name="jm_login_button_text" 
+				type="text" 
+				default="Login" 
+				label="Login button text"
+				description="Login button text" />
+            <field 
+				name="jm_login_post_text" 
+				type="text" 
+				default="Please add your account info to login" 
+				label="Login post text"
+				description="Login post text" />
+            <field 
+				name="jm_login_connect_with" 
+				type="text" 
+				default="Or Connect With" 
+				label="Login connect with"
+				description="Login connect with" />
+            <field 
+				name="jm_register_title" 
+				type="text" 
+				default="" 
+				label="Register title"
+				description="Register title" />
+            <field 
+				name="jm_register_button_text" 
+				type="text" 
+				default="Register" 
+				label="Register button text"
+				description="Register button text" />
+		</fieldset>
+	</fields>
+</form>

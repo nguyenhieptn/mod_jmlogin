@@ -5,7 +5,7 @@
 # Version 1.0
 # -----------------------------------------------------------------------
 # Author - JoomlaMan http://www.joomlaman.com
-# Copyright Â© 2012 - 2013 JoomlaMan.com. All Rights Reserved.
+# Copyright © 2012 - 2013 JoomlaMan.com. All Rights Reserved.
 # @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or Later
 # Websites: http://www.JoomlaMan.com
 #------------------------------------------------------------------------
@@ -15,55 +15,55 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.html.html');
 jimport('joomla.form.formfield');
 class JFormFieldTheme extends JFormField {
-	protected $type = 'Theme'; //the form field type
+protected $type = 'Theme'; //the form field type
 	    var $options = array();
 	    
 	    protected function getInput() {
-	    $html=array();
-	    $folder=array();
-            $options = array();
-	    $i=0;
-	    	$html[]='<select class="jm-field single" name="'.$this->name.'">';
-	    	if(is_dir(JPATH_SITE . '/modules/mod_jmlogin/themes/'))
-	    	if ($handle = opendir(JPATH_SITE . '/modules/mod_jmlogin/themes/')) {
-                    
-		    while (false !== ($entry = readdir($handle))) {
-		    	$files[$entry]=$entry;
-                        
-		    	if ($entry != "." && $entry != ".." &&$entry!="index.html"){
-                            
-		    		if($this->value==str_replace('.php','',$entry)) {
-		    			$selected=" selected=true ";
-		    			}
-		    		else $selected="";
-						//Parser layout name
-						$theme_name = str_replace('.php','',$entry);
-						$order = 9999;
-						ob_start();
-						readfile(JPATH_SITE . '/modules/mod_jmlogin/themes/' . $entry);
-						$file_content = ob_get_clean();
-                                                //var_dump($file_content); die;
-						preg_match("'<!--layout:(.*?),order:(.*?)-->'si", $file_content, $match);
-						if(isset($match[1])) $theme_name = $match[1];
-						if(isset($match[2])) $order = $match[2];
-						$option_html = '<option '.$selected.' value="'.str_replace('.php','',$entry).'">'.$theme_name.'</option>';
-						$options[] = array('order'=>$order,'html'=> $option_html);
-						//$html[]='<option '.$selected.' value="'.str_replace('.php','',$entry).'">'.$theme_name.'</option>';
+	    $extpath = $this->element['extpath'];	
+		JHtml::_('script', $extpath . '/elements/japrofile.js');
+		JHtml::_('stylesheet', $extpath . '/elements/japrofile.css');   
+        $jsonData = array();
+		$folder_profiles = array();
+		$profiles = array();
+		$jsonData = array();
+        // get in module
+        jimport('joomla.filesystem.folder');
+		jimport('joomla.filesystem.file');
+		$path = JPATH_SITE . DIRECTORY_SEPARATOR . $extpath . DIRECTORY_SEPARATOR . 'themesattr';
+		if (!JFolder::exists($path)){
+			return JText::_('PROFILE_FOLDER_NOT_EXIST');
+		}
+		$files = JFolder::files($path, '.ini');
+		if ($files) {
+			foreach ($files as $fname) {
+				$fname = substr($fname, 0, -4);
+
+				$f = new stdClass();
+				$f->id = $fname;
+				$f->title = $fname;
+
+				$profiles[$fname] = $f;
+				
+				$params = new JRegistry(JFile::read($path . DIRECTORY_SEPARATOR . $fname . '.ini'));
+				$jsonData[$fname] = $params->toArray();
 			}
-		    }
-		    closedir($handle);
 		}
-		$orders = array();
-		foreach($options as $key => $option){
-			$orders[$key] = $option['order'];
+         
+        
+        $xmlparams = JPATH_SITE . DIRECTORY_SEPARATOR . $extpath . DIRECTORY_SEPARATOR . 'admin/jmtheme/config.xml';
+		if (file_exists($xmlparams)) {
+			/* For General Form */
+			$options = array('control' => 'jmform');
+			$paramsForm = JForm::getInstance('jform', $xmlparams, $options);
+
+			$HTML_Profile = JHTML::_('select.genericlist', $profiles, '' . $this->name, 'style="width:150px;"', 'id', 'title', $this->value);
+			ob_start();
+				require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'theme_attr.php';
+				$content = ob_get_clean();		
+			 
+			return $content;
 		}
-		array_multisort($orders, SORT_ASC, $options);
-		$html='<select class="jm-field single" name="'.$this->name.'">';
-		foreach($options as $option){
-			$html .= $option['html'];
-		}
-		$html .= '</select>';
-		return $html;
+		 
 	}
 	function getTemplate(){
 		$db=JFactory::getDBO();
@@ -77,3 +77,4 @@ class JFormFieldTheme extends JFormField {
 	}
     
 }
+ 

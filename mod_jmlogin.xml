@@ -8,53 +8,41 @@
     <authorUrl>http://www.joomlaman.com</authorUrl>
     <copyright>Copyright © 2013 - All rights reserved.</copyright>
     <license>GNU General Public License v2.0</license>
-    <description>MOD_JM_LOGIN_DESCRIPTION</description>
+    <description>MOD_JMLOGIN_DESCRIPTION</description>
     <files>
         <filename>mod_jmlogin.xml</filename>
         <filename module="mod_jmlogin">mod_jmlogin.php</filename>
         <filename>index.html</filename>
         <filename>helper.php</filename>
-        <filename>ajax_register.php</filename>
-        <filename>ajax_login.php</filename>
-        <filename>ajax_repassword.php</filename>
-        <filename>ajax_validate.php</filename>
         <folder>tmpl</folder>
         <folder>admin</folder>
         <folder>assets</folder>
         <folder>language</folder>
     </files>
+    <install> 
+		<sql>
+			<file driver="mysql" charset="utf8">admin/sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall> 
+		<sql>
+			<file driver="mysql" charset="utf8">admin/sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
     <languages folder="language">
         <language tag="en-GB">en-GB/en-GB.mod_jmlogin.ini</language>
     </languages>
     <config>
         <fields name="params" addfieldpath="/modules/mod_jmlogin/elements">			
             <fieldset name="basic">
-                <field
-                    name="show_formlabel"
-                    type="list" class="jm-field single"
-                                default="0"
-                                label="SHOW_FORM_LABEL"
-                                description="SHOW_FORM_DESC">
-                    <option value="0">JNO</option>
-                    <option value="1">JYES</option>
-                </field>				
-                <field
-                    name="align_option"
-                    type="list" class="jm-field single"
-                                default="right"
-                                label="ALIGN_OPTION_LABEL"
-                                description="ALIGN_OPTION_DESC">
-                    <option value="right">JRIGHT</option>
-                    <option value="center">JCENTER</option>
-                    <option value="left">JLEFT</option>
-                </field>
+                
                 <field 
                     name="login" 
                     type="menuitem"  class="jm-field single"
                                      default="" 
                                      disable="separator" 
-                                     label="LOGIN_REDIRECTION_URL" 
-                                     description="LOGIN_REDIRECTION_URL_DESC" > 
+                                     label="MOD_JMLOGIN_LOGIN_REDIRECTION_URL_LBL" 
+                                     description="MOD_JMLOGIN_LOGIN_REDIRECTION_URL_DESC" > 
                     <option value="">JDEFAULT</option>
                 </field>
                 <field 
@@ -62,134 +50,93 @@
                     type="menuitem"  class="jm-field single"
                                      default="" 
                                      disable="separator" 
-                                     label="LOGOUT_REDIRECTION_URL" 
-                                     description="LOGOUT_REDIRECTION_URL_DESC" >
+                                     label="MOD_JMLOGIN_LOGOUT_REDIRECTION_URL_LBL" 
+                                     description="MOD_JMLOGIN_LOGOUT_REDIRECTION_URL_DESC" >
                     <option value="">JDEFAULT</option>
-                </field>				
+                </field>
+                <field 
+					name="display_type" 
+					type="list" 
+					default="0" 					
+					label="MOD_JMLOGIN_DISPLAY_TYPE_LBL" description="MOD_JMLOGIN_DISPLAY_TYPE_DESC">
+					<option value="0">MOD_JMLOGIN_MODAL</option>
+					<option value="1">MOD_JMLOGIN_DROPDOWN</option>
+				</field>
+				<field 
+					name="mouse_event" 
+					type="list" 
+					default="click" 					
+					label="MOD_JMLOGIN_MOUSE_EVENT_LBL" description="MOD_JMLOGIN_MOUSE_EVENT_DESC">
+					<option value="click">MOD_JMLOGIN_CLICK</option>
+					<option value="hover">MOD_JMLOGIN_HOVER</option>
+				</field>				
                 <field 
                     name="name" 
                     type="list"  class="jm-field single"
                                  default="0" 
-                                 label="NAME_USERNAME" description="NAME_USERNAME_DESC">
-                    <option value="0">JUSERNAME</option>
-                    <option value="1">JNAME</option>
+                                 label="MOD_JMLOGIN_NAME_USERNAME_LBL" description="MOD_JMLOGIN_NAME_USERNAME_DESC">
+                    <option value="0">MOD_JMLOGIN_JUSERNAME</option>
+                    <option value="1">MOD_JMLOGIN_JNAME</option>
                 </field>
                 <field 
                     name="enabled_registration_tab" 
                     type="radio" 
-                    class="bt_switch jm-field single"
+                    class="jm-field single btn-group btn-group-yesno"
                     default="1" 
-                    label="REGISTRATION_TAB" 
-                    description="REGISTRATION_TAB_DESC">
+                    label="MOD_JMLOGIN_REGISTRATION_TAB_LBL" 
+                    description="MOD_JMLOGIN_REGISTRATION_TAB_DESC">
                     <option value="0">JNO</option>
                     <option value="1">JYES</option>
                 </field>
-                <field
-                    name="tag_login_modal"
-                    type="text"  class="jm-field"
-                                 default="Login"
-                                 label="TAB_LOGON_MODAL_LABEL"
-                                 description="TAB_LOGON_MODAL_DESC"
-				/>
-                <field
-                    name="tag_register_modal"
-                    type="text"  class="jm-field"
-                                 default="Register"
-                                 label="TAB_REGISTER_MODAL_LABEL"
-                                 description="TAB_REGISTER_MODAL_DESC"
-				/>	
-                <field
-                    name="tag_regain_password_modal"
-                    type="text"  class="jm-field"
-                                 default="Regain password"
-                                 label="TAB_REGAIN_PASSWORD_MODAL_LABEL"
-                                 description="TAB_REGAIN_PASSWORD_MODAL_DESC"
-				/>	
-                <field
-                    name="mail_to"
-                    type="text" class="jm-field"
-                                default="admin@yoursite.com"
-                                label="MAIL_TO_LABEL"
-                                description="MAIL_TO_DESC"
-				/>
-                <field
-                    name="field_name"
-                    type="text" class="jm-field"
-                                default="Name"
-                                label="FIELD_NAME_LABEL"
-                                description="FIELD_NAME_DESC"
-				/>
-                <field
-                    name="field_username"
-                    type="text" class="jm-field"
-                                default="Username"
-                                label="FIELD_USERNAME_LABEL"
-                                description="FIELD_USERNAME_DESC"
-				/>
-                <field
-                    name="field_password"
-                    type="text" class="jm-field"
-                                default="Password"
-                                label="FIELD_PASSWORD_LABEL"
-                                description="FIELD_PASSWORD_DESC"
-				/>
-                <field
-                    name="field_verifypassword"
-                    type="text" class="jm-field"
-                                default="Verify Password"
-                                label="FIELD_VERIFYPASSWORD_LABEL"
-                                description="FIELD_VERIFYPASSWORD_DESC"
-				/>
-                <field
-                    name="field_email"
-                    type="text" class="jm-field"
-                                default="Email"
-                                label="FIELD_EMAIL_LABEL"
-                                description="FIELD_EMAIL_DESC"
-				/>
-                <field
-                    name="field_verifyemail"
-                    type="text" class="jm-field"
-                                default="Verify Email"
-                                label="FIELD_VERIFYEMAIL_LABEL"
-                                description="FIELD_VERIFYEMAIL_DESC"
-				/>
-                <field
-                    name="btn_sign_in"
-                    type="text" class="jm-field"
-                                default="SIGN IN"
-                                label="BTN_SIGN_IN_LABEL"
-                                description="BTN_SIGN_IN_DESC"
-				/>
-                <field
-                    name="btn_register"
-                    type="text" class="jm-field"
-                                default="REGISTER"
-                                label="BTN_REGISTER_LABEL"
-                                description="BTN_REGISTER_DESC"
-				/>
-                <field
-                    name="btn_regain_password"
-                    type="text" class="jm-field"
-                                default="SUBMIT"
-                                label="BTN_REGAIN_PASSWORD_LABEL"
-                                description="BTN_REGAIN_PASSWORD_DESC"
-				/>
+                <field 
+                    name="enabled_login_tab" 
+                    type="radio" 
+                    class="jm-field single btn-group btn-group-yesno"
+                    default="1" 
+                    label="MOD_JMLOGIN_LOGIN_TAB_LBL" 
+                    description="MOD_JMLOGIN_LOGIN_TAB_DESC">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                <field 
+					name="module_id" 
+					id="bt_module_id" 
+					type="sql" 
+					default="19" 
+					multiple="multiple" 
+					size="10" 
+					label="MOD_JMLOGIN_LOGED_MODULE_LBL" 
+					description="MOD_JMLOGIN_LOGED_MODULE_DESC" 
+					query="SELECT id, module, title FROM #__modules WHERE  `client_id`=0 AND ( `published` !=-2 AND `published` !=0 ) ORDER BY position ASC" key_field="id" value_field="title" 
+					/>
+					
+				<field 
+					name="module_position" 
+					id="bt_module_position" 
+					type="sql" 
+					default="0" 
+					multiple="multiple" 
+					size="10" 
+					label="MOD_JMLOGIN_LOGED_POSITION_LBL" 
+					description="MOD_JMLOGIN_LOGED_POSITION_DESC" 
+					query="SELECT DISTINCT position FROM #__modules ORDER BY position ASC" key_field="position" value_field="position" 
+					/> 
+                 
+                <field name="use_captcha" type="list" default="1" label="MOD_JMLOGIN_USE_CAPTCHA_LBL" description="MOD_JMLOGIN_USE_CAPTCHA_DESC">
+					<option value="0">JNONE</option>
+					<option value="1">MOD_JMLOGIN_BUILTIN_CAPTCHA</option>
+				</field>
+            </fieldset>
+            <fieldset name="layout">
+                <field name="theme" type="theme" extpath="modules/mod_jmlogin" class="jm-field single" default="default" label="Select Theme" description="MOD_JMLOGIN_THEME"></field>
             </fieldset>
             <fieldset name="advanced">
-                <field 
-                    name="theme" 
-                    type="theme"  class="jm-field single"
-                                 default="0" 
-                                 label="Select Theme" 
-                                 description="BT_LOADJQUERY_DESC">
-                </field>
                 <field 
                     name="loadJquery" 
                     type="list"  class="jm-field single"
                                  default="0" 
-                                 label="BT_LOADJQUERY" 
-                                 description="BT_LOADJQUERY_DESC">
+                                 label="MOD_JMLOGIN_LOADJQUERY_LBL" 
+                                 description="MOD_JMLOGIN_LOADJQUERY_DESC">
                     <option value="1">JYES</option>
                     <option value="0">JNO</option>
                     <option value="2">Auto</option>
@@ -197,136 +144,39 @@
                 <field
                     name="moduleclass_sfx"
                     type="text" class="jm-field"
-                                label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
-                                description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
-               
-				<field
-                    name="show_close_btn"
-                    type="radio" class="jm-field"
-								default="true"
-                                label="JMLOGIN_SHOW_CLOSE_BTN_LBL"
-                                description="JMLOGIN_SHOW_CLOSE_BTN_DESC" >
-								<option value="true">JYES</option>
-								<option value="false">JNO</option>
-                </field>
-				<field
-                    name="modal_scroll"
-                    type="radio" class="jm-field"
-								default="true"
-                                label="JMLOGIN_MODAL_SCROLL_LBL"
-                                description="JMLOGIN_MODAL_SCROLL_DESC" >
-								<option value="true">JYES</option>
-								<option value="false">JNO</option>
-                </field>
+                                label="MOD_JMLOGIN_MODULE_CLASS_SFX_LBL"
+                                description="MOD_JMLOGIN_MODULE_CLASS_SFX_DESC" />
 				<field
                     name="modal_width"
                     type="text" class="jm-field" default="400"
-                                label="JMLOGIN_MODAL_WIDTH_LBL"
-                                description="JMLOGIN_MODAL_WIDTH_DESC" />
+                                label="MOD_JMLOGIN_MODAL_WIDTH_LBL"
+                                description="MOD_JMLOGIN_MODAL_WIDTH_DESC" />
 				<field
                     name="modal_height"
                     type="text" class="jm-field" default=""
-                                label="JMLOGIN_MODAL_HEIGHT_LBL"
-                                description="JMLOGIN_MODAL_HEIGHT_DESC" />
-				<field
-                    name="recaptcha_public"
-                    type="text" class="jm-field"
-										default="6LcAvOcSAAAAAJlduRDvO3rySCirzYSoOAMygjSt"
-                                label="COM_MODULES_FIELD_RECAPTCHA_PUBLIC_LABEL"
-                                description="COM_MODULES_FIELD_RECAPTCHA_PUBLIC_DESC" />
-                <field
-                    name="recaptcha_private"
-                    type="text" class="jm-field"
-										default="6LcAvOcSAAAAAKJTGN9ANA5IXBJCf6qxRTpMC1wO"
-                                label="COM_MODULES_FIELD_RECAPTCHA_PRIVATE_LABEL"
-                                description="COM_MODULES_FIELD_RECAPTCHA_PRIVATE_DESC" />
-                <field
-                    name="error_invalid_username_or_password"
-                    type="text" class="jm-field"
-                                default="Invalid username or password"
-                                label="ERROR_INVALID"
-                                description="ERROR_INVALID_DESC"
-                                size="55"
-				/>
-                <field
-                    name="error_existing_username_register"
-                    type="text" class="jm-field"
-                                default="Sorry, your username belongs to an existing account."
-                                label="ERROR_EXISTING_USERNAME_REGISTER_LABEL"
-                                description="ERROR_EXISTING_USERNAME_REGISTER_DESC"
-                                size="55"
-				/>	
-                <field
-                    name="error_existing_email_register"
-                    type="text" class="jm-field"
-                                default="Sorry, your email belongs to an existing account."
-                                label="ERROR_EXISTING_EMAIL_REGISTER_LABEL"
-                                description="ERROR_EXISTING_EMAIL_REGISTER_DESC"
-                                size="55"
-				/>	
-                <field
-                    name="mess_check_mail_regainpass"
-                    type="text" class="jm-field"
-                                default="Note: Please check mail to retrieve your password."
-                                label="MESS_CHECK_MAIL_REGAINPASS_LABEL"
-                                description="MESS_CHECK_MAIL_REGAINPASS_DESC"
-                                size="55"
-				/>	
-                <field
-                    name="mess_account_not_exists_regainpass"
-                    type="text" class="jm-field"
-                                default="Note: Account not exists"
-                                label="MESS_ACCOUNT_NOT_EXISTS_REGAINPASS_LABEL"
-                                description="MESS_ACCOUNT_NOT_EXISTS_REGAINPASS_DESC"
-                                size="55"
-				/>	
-                <field
-                    name="error_existing_username_register"
-                    type="text" class="jm-field"
-                                default="Error: This existing username."
-                                label="ERROR_EXISTING_USERNAME_REGISTER_LABEL"
-                                description="ERROR_EXISTING_USERNAME_REGISTER_DESC"
-                                size="55"
-				/>	
-                <field
-                    name="error_existing_email_register"
-                    type="text" class="jm-field"
-                                default="Error: This existing email."
-                                label="ERROR_EXISTING_EMAIL_REGISTER_LABEL"
-                                description="ERROR_EXISTING_EMAIL_REGISTER_DESC"
-                                size="55"
-				/>	
-                <field
-                    name="error_wrong_capcha_register"
-                    type="text" class="jm-field"
-                                default="Error: Wrong capcha"
-                                label="ERROR_WRONG_CAPCHA_REGISTER_LABEL"
-                                description="ERROR_WRONG_CAPCHA_REGISTER_DESC"
-                                size="55"
-				/>	
-                
-                <field addfieldpath="/modules/mod_jmlogin/admin/elements" type="asset" name="asset" path="modules/mod_jmlogin/admin/assets/" />
+                                label="MOD_JMLOGIN_MODAL_HEIGHT_LBL"
+                                description="MOD_JMLOGIN_MODAL_HEIGHT_DESC" />
+                <field name="jmlogin_social_show_avatar" type="radio" class="jm-field single btn-group btn-group-yesno" default="0" label="MOD_JMLOGIN_SOCIAL_SHOW_AVATAR_LABEL" description="MOD_JMLOGIN_SOCIAL_SHOW_AVATAR_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
             </fieldset>	
-            <fieldset name="Captcha">
-                 <field
-                    name="show_captcha"
-                    type="radio" class="jm-field"
-								default="0"
-                                label="JMLOGIN_SHOW_REACAPTCHA_LBL"
-                                description="JMLOGIN_SHOW_REACAPTCHA_DESC" >
-								<option value="1">JYES</option>
-								<option value="0">JNO</option>
-                </field>
-                <field name="captcha_format" type="list" default="png" label="AR_CAPTCHA_FORMAT" description="AR_CAPTCHA_FORMAT_DESC">
-			<option value="png">png</option>
-			<option value="gif">gif</option>
-			<option value="jpeg">jpeg</option>
-		</field>
-		<field name="captcha_width" type="text" size="6" default="100" label="AR_CAPTCHA_WIDTH" description="AR_CAPTCHA_WIDTH_DESC" />
-		<field name="captcha_height" type="text" size="6" default="40" label="AR_CAPTCHA_HEIGHT" description="AR_CAPTCHA_HEIGHT_DESC" />
-		<field name="captcha_font_min" type="text" size="6" default="11" label="AR_CAPTCHA_FONT_MIN" description="AR_CAPTCHA_FONT_MIN_DESC" />
-		<field name="captcha_font_max" type="text" size="6" default="14" label="AR_CAPTCHA_FONT_MAX" description="AR_CAPTCHA_FONT_MAX_DESC" />
-            </fieldset>
+           	<fieldset name="facebook-login" label="MOD_JMLOGIN_FACEBOOK_LOGIN_LABEL">
+				<field name="jmlogin_enable_fb" type="radio" class="jm-field single btn-group btn-group-yesno" default="0" label="MOD_JMLOGIN_ENABLE_FB_LOGIN_LABEL" description="MOD_JMLOGIN_ENABLE_FB_LOGIN_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="jmlogin_appfb_id" type="text" default="" size="35" label="MOD_JMLOGIN_APP_FB_ID_LABEL" description="MOD_JMLOGIN_APP_FB_ID_DESC"/>
+				<field name="jmlogin_appfb_secret" type="text" default="" size="35" label="MOD_JMLOGIN_APP_FB_SECRET_LABEL" description="MOD_JMLOGIN_APP_FB_SECRET_DESC"/>							
+			</fieldset>
+            <fieldset name="google-login" label="MOD_JMLOGIN_GOOGLE_LOGIN_LABEL">
+				<field name="jmlogin_enable_gg" type="radio" class="jm-field single btn-group btn-group-yesno" default="0" label="MOD_JMLOGIN_ENABLE_GG_LOGIN_LABEL" description="MOD_JMLOGIN_ENABLE_GG_LOGIN_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="jmlogin_appgg_id" type="text" default="" size="35" label="MOD_JMLOGIN_APP_GG_ID_LABEL" description="MOD_JMLOGIN_APP_GG_ID_DESC"/>
+				<field name="jmlogin_appgg_secret" type="text" default="" size="35" label="MOD_JMLOGIN_APP_GG_SECRET_LABEL" description="MOD_JMLOGIN_APP_GG_SECRET_DESC"/>							
+			</fieldset>
         </fields>
     </config>
 </extension>
