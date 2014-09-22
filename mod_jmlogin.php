@@ -43,10 +43,13 @@ $name_display = $params->get('name');
 $login_tab = $params->get('enabled_login_tab'); 
 $register_tab = $params->get('enabled_registration_tab');
 $mount_event= $params->get('mouse_event','click') ;
+
 $jmlogin_enable_fb=$params->get('jmlogin_enable_fb');
 $jmlogin_appfb_id=$params->get('jmlogin_appfb_id');
 $jmlogin_appfb_secret=$params->get('jmlogin_appfb_secret');
 $jmlogin_enable_gg=$params->get('jmlogin_enable_gg');
+$jmlogin_appgg_id=$params->get('jmlogin_appgg_id');
+$jmlogin_appgg_secret=$params->get('jmlogin_appgg_secret');
 
 $jmlogin_social_show_avatar=$params->get('jmlogin_social_show_avatar');
 if(JRequest::getVar("jmtask")){
@@ -89,9 +92,10 @@ if($use_captcha!=0){
 //sociasl
 $callback_url = JURI::getInstance()->toString();
 $fb_popup=modJmloginHelper::getfb_popup($jmlogin_appfb_id,$callback_url);
+$gg_popup=modJmloginHelper::getgg_popup($jmlogin_appgg_id,urlencode(substr(JURI::base(false),0,-1)));
 if(isset($_REQUEST["code"])){
     $code = $_REQUEST["code"];
-    if($jmlogin_enable_fb){
+    if($jmlogin_enable_fb && $_REQUEST["state"]=='fb'){
 			modJmloginHelper::deniedRequest();
 	   		$callback_url =  modJmloginHelper::getOpenerUrl($callback_url);
 		   	$token_url = modJmloginHelper::getTokenUrl($jmlogin_appfb_id, $callback_url, $jmlogin_appfb_secret, $code);			
@@ -105,8 +109,16 @@ if(isset($_REQUEST["code"])){
             modJmloginHelper::generalUser($user);          
 			$user['access_token'] = $paramsFB['access_token'];
 			modJmloginHelper::checkUser($user);
-    }else if($jmlogin_enable_gg){
-        
+    }else if($jmlogin_enable_gg && $_REQUEST["state"]=='gg'){
+			modJmloginHelper::deniedRequest();	 
+	   	  	$token = modJmloginHelper::getTokenGG($code, $jmlogin_appgg_id, $jmlogin_appgg_secret, substr(JURI::base(false),0,-1), 'authorization_code');
+	   	    $user = modJmloginHelper::getUserGG($token->access_token);
+			$user = modJmloginHelper::prepareData($user,'google');
+			$user = modJmloginHelper::assignProfile($user,$params->get ( 'gg-profiles' ));
+            modJmloginHelper::generalUser($user); 
+			$user['access_token'] = $token->access_token;
+		 	modJmloginHelper::checkUser($user); 
+		 
     }
 }
  

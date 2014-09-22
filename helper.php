@@ -525,6 +525,17 @@ class modJmloginHelper {
 		  . $app_id . "&redirect_uri=" . urlencode($callback_url) . "&state=fb&display=popup&scope=email,user_birthday,user_location,email,user_website,user_photos,user_hometown,user_about_me";
          return $popup_url;
     }
+    public static function getgg_popup($app_id,$callback_url){
+    	$popup_url = 'https://accounts.google.com/o/oauth2/auth?client_id='
+					  .$app_id.'&redirect_uri='. urldecode($callback_url).'&state=gg'
+					  .'&scope=https://www.googleapis.com/auth/userinfo.email'
+					  .'+https://www.googleapis.com/auth/userinfo.profile'
+					  .'&response_type=code'
+                      .'&approval_prompt=force'
+                      .'&cookie_policy=single_host_origin'
+                      .'&include_granted_scopes=true';
+         return $popup_url;
+    }
     public static function deniedRequest(){
 		if(isset($_REQUEST['state']) && (isset($_REQUEST['denied']) || isset($_REQUEST['error']))){
 			echo '<script type="text/javascript"> window.close();</script>';
@@ -545,7 +556,8 @@ class modJmloginHelper {
 		 return "https://graph.facebook.com/oauth/access_token?"
        . "client_id=" . $appfb_id . "&redirect_uri=" . urlencode($callback_url)
        . "&client_secret=" . $appfb_secret ."&code=" . $code;
-	}	
+	}
+    	
 	public static function curlResponse($url,$data = null){
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
@@ -593,15 +605,19 @@ class modJmloginHelper {
 				$data ['bio'] = isset($user->bio)? $user->bio:'';
 				$data ['quotes'] = isset($user->quotes)? $user->quotes:'';
 				$data ['birthday'] = isset($user->birthday)? $user->birthday:'';
+                $session->set('user_picture','http://graph.facebook.com/'.$user->id.'/picture?type=square');
 			break;
 			case 'google': 
 				$data ['id'] = $user->id;
 				$data ['name'] = $user->name;
-				list($data ['username']) = explode('@',$user->email);
+                $usernames=explode('@',$user->email);
+                $data ['username'] =  $usernames[0];
 				$data ['email'] = $user->email;
 				$data ['link'] = $user->link;
 				$data ['birthday'] = isset($user->birthday)? $user->birthday:'';
-				//$data ['picture'] = isset($user->picture)? $user->picture:'';
+				$data ['picture'] = isset($user->picture)? $user->picture:'';
+                $data ['gender'] = isset($user->gender)? $user->gender:'';
+                $session->set('user_picture',$data ['picture']);
 			break;
 			case 'twitter':
 				$data ['id'] = $user->id;
@@ -616,7 +632,7 @@ class modJmloginHelper {
 				$data ['bio'] = isset($user->description)? $user->description:'';
 			break;
 		}
-        $session->set('user_id_picture',$user->id);
+        
 		$data['loginType'] = $type;
 		$data['rawData'] = serialize($user);
 		return $data;
@@ -758,5 +774,31 @@ class modJmloginHelper {
 		echo '<script type="text/javascript">'.$alert.'window.opener.location.href=window.opener.jmOpt.JM_RETURN; window.close();</script>';
 		exit;
 	}
+    /*------------------- google connecting -------------------*/
+	public  static function getTokenGG($code, $client_id, $client_secret, $redirect_uri, $grant_type){
+	 	$url = 'https://accounts.google.com/o/oauth2/token';
+		$fields = array(
+		        'code' => $code,
+		        'client_id' => $client_id,
+		    	'client_secret' =>$client_secret,
+		    	'redirect_uri' => $redirect_uri,
+		    	'grant_type' => $grant_type
+				);
+				
+		$fields_string = '';		
+		foreach($fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+		$fields_string = rtrim($fields_string, '&');
+		$response = self::curlResponse($url,$fields_string) ;
+		return json_decode($response);	
+	}
+    public static function getUserGG($access_token)
+	{
+		$url = 'https://www.googleapis.com/oauth2/v1/userinfo?access_token='.$access_token;
+		$user = self::curlResponse($url);
+		$user= json_decode($user);
+		return $user;
+	}
+    
  }
+ 
 ?>

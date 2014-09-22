@@ -46,11 +46,11 @@ var modal_height='<?php echo $modal_height;?>';
 		<div class='jmlogin_username_wrap'> 
             <?php
             if($jmlogin_social_show_avatar):
-            $user_picture=$session->get('user_id_picture');
-            ?>
-            <span style="float:left;">
-                <img src="<?php if (!empty($user_picture)) { echo 'http://graph.facebook.com/'.$user_picture.'/picture?type=square';} else {echo JURI::root().'modules/mod_jmlogin/assets/images/noimage.png';}?>" alt="<?php echo $user->get('name');?>" style="width:50px; height:auto;background: none repeat scroll 0 0 #FFFFFF; border: 1px solid #CCCCCC; display: block; margin: -4px 4px 4px 0; padding: 2px;">
-            </span>
+                $user_picture=$session->get('user_picture');
+                ?>
+                <span style="float:left;">
+                    <img src="<?php if (!empty($user_picture)) { echo $user_picture;} else {echo JURI::root().'modules/mod_jmlogin/assets/images/noimage.png';}?>" alt="<?php echo $user->get('name');?>" style="width:50px; height:auto;background: none repeat scroll 0 0 #FFFFFF; border: 1px solid #CCCCCC; display: block; margin: -4px 4px 4px 0; padding: 2px;">
+                </span>
             <?php endif;?>
 			<span class='jmlogin_username jm-login-link-modal'><?php echo ($name_display) ? JText::_('JM_GREETING').$user->name : JText::_('JM_GREETING').$user->username; ?>  <i class="fa fa-caret-down"></i></span>
 		</div>

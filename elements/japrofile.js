@@ -204,6 +204,7 @@ var JAProfileConfig = new Class({
 		
 		if(task){
 			JAFileConfig.profiles[this.vars.active] = this.rebuildData();
+            console.log(JAFileConfig.mod_url);
 			this.submitForm(JAFileConfig.mod_url + '?jaction=save&theme=' + this.vars.active, JAFileConfig.profiles[this.vars.active], 'theme', task);
 		}
 	},
