@@ -3,43 +3,39 @@
 	text-decoration: none;
 }
 .jmlayout5{
-	width: 300px;
 	margin: 0 auto;
 	background: #f7f4ef;
 	position: relative;
-	top: 100px;
 	line-height: 1;
 	font-family: cursive;
 	border-radius: 10px;
 }
-.jm_login .jminner{
+.jm_login .jm-inner{
 	padding: 20px 30px;
 	color:#80807e;
 }
 
 /*form*/
-.jm_login form#login-form{margin: 15px 0;position: relative;}
-.jm_login form#login-form div.input{
+.jm_login form#jm-login-form, .jm_login form#jm-form-register{margin: 15px 0;position: relative;}
+.jm_login form#jm-login-form div.input, .jm_login form#jm-form-register div.input{
 	margin-bottom: 15px;
-	background: #fff;
 	position: relative;
 }
-.jm_login form#login-form input{
+.jm_login form#jm-login-form input, .jm_login form#jm-form-register input{
 	color: #c3c2be;
 	padding: 10px 0;
 	margin: 0;
 	border: none;
 	outline: none;
 }
-.jm_login form#login-form input.inputbox{
-	width: 82%;
+.jm_login form#jm-login-form input.inputbox, .jm_login form#jm-form-register input.inputbox{
+	width: 88%;
 	background: #fff;
 	padding: 10px 10px 10px 30px;
-	border-left: 2px solid transparent;
 	transition: 1s;
 }
-.jm_login form#login-form input.inputbox:hover,
-.jm_login form#login-form input.inputbox:focus{
+.jm_login form#jm-login-form input.inputbox:hover,
+.jm_login form#jm-login-form input.inputbox:focus, .jm_login form#jm-form-register input.inputbox:hover, .jm_login form#jm-form-register input.inputbox:focus{
 	border-left-color: #e6746a;
 }
 ::-webkit-input-placeholder {
@@ -57,7 +53,7 @@
 :-ms-input-placeholder {  
    color:  #c3c2be;  
 }
-.jm_login form#login-form input[type='submit']{
+.jm_login form#jm-login-form input[type='submit'], .jm_login form#jm-form-register input[type='submit']{
 	width: 100%;
 	background: #e6746a;
 	text-transform: uppercase;
@@ -66,7 +62,7 @@
 	color: #fff;
 }
 /*Login------------------*/
-.jm_login form#login-form .input span{
+.jm_login form#jm-login-form .input span, .jm_login form#jm-form-register .input span{
 	display: inline-block;
 	text-align: center;
 	background: #fff;
@@ -80,15 +76,15 @@
 .jm_login .jm-login-footer{overflow: hidden;}
 .jm_login .jm-login-footer a{display: block;}
 
-.jm_login .jmsocial{
+.jm_login .jm-social{
 	text-align: center;
 }
-.jm_login .jmsocial ul{padding: 0;margin: 5px 0;}
-.jm_login .jmsocial ul li{
+.jm_login .jm-social ul{padding: 0;margin: 5px 0;}
+.jm_login .jm-social ul li{
 	display: inline-block;
 	list-style: none;
 }
-.jm_login .jmsocial ul li a{
+.jm_login .jm-social ul li a{
 	transition: 1s;
 	font-size: 18px;
 	display: block;
@@ -98,5 +94,17 @@
 	width: 20px;
 	border-radius: 20px;
 }
-.jm_login .jmsocial ul li a:hover {color: #fff;background: #cc6054;}
+.jm_login .jm-social ul li a:hover {color: #fff;background: #cc6054;}
 /*Register------------------*/
+
+#jm-captchas img{
+    position:absolute;
+    left:  10%;
+}
+#jm-captchas input#jm-captcha{
+    float:right;
+    width: 35%;
+}
+#jm-register-btn{
+    height:50px;
+}

@@ -5,10 +5,8 @@
 	font-size: 11px;
 }
 .jmlayout8{
-	width: 300px;
 	margin: 0 auto;
 	position: relative;
-	top: 100px;
 	line-height: 1;
 	font-family: sans-serif;
 	border-radius: 7px;
@@ -17,7 +15,7 @@
 	
 }
 
-.jm_login .jminner{
+.jm_login .jm-inner{
 	padding: 20px 30px;
 	color:#47a0a0;
 	text-align: center;
@@ -33,16 +31,16 @@
 	background-repeat: repeat-x;
 	height: 6px;
 }
-.jm_login .jminner_bottom{background-image: url(../images/bgbottom.png);}
-.jm_login .jminner_top{background-image: url(../images/bgtop.png);}
-.jm_login .jmtitle{font-size: 20px;}
-.jm_login .jmwidth{
+.jm_login .jminner_bottom{background-image: url(../../themes/layout8/images/bgbottom.png);}
+.jm_login .jminner_top{background-image: url(../../themes/layout8/images/bgtop.png);}
+.jm_login .jm-title{font-size: 20px;}
+.jm_login .jm-width{
 	width: 50%;
 	float: left;
 }
 /*form*/
-.jm_login form#login-form{margin: 15px 0;}
-.jm_login form#login-form input{
+.jm_login form#jm-login-form{margin: 15px 0;}
+.jm_login form#jm-login-form input{
 	color: #47a0a0;
 	padding: 10px 0;
 	margin: 0 0 15px 0;
@@ -50,7 +48,7 @@
 	outline: none;
 	text-align: center;
 }
-.jm_login form#login-form input.inputbox{
+.jm_login form#jm-login-form input.inputbox{
 	width: 99%;
 	padding: 10px 0;
 	border: 1px solid #cdd6e6;
@@ -64,8 +62,8 @@
 	background: -webkit-linear-gradient(top, #D7E3E4 0%, #E3F0F1 100%);
 	background: linear-gradient(to bottom, #D7E3E4 0%, #E3F0F1 100%);
 }
-.jm_login form#login-form input.inputbox:hover,
-.jm_login form#login-form input.inputbox:focus{
+.jm_login form#jm-login-form input.inputbox:hover,
+.jm_login form#jm-login-form input.inputbox:focus{
 	border-color: #47a0a0;
 }
 ::-webkit-input-placeholder {
@@ -83,7 +81,7 @@
 :-ms-input-placeholder {  
    color:  #47a0a0;  
 }
-.jm_login form#login-form input[type='submit']{
+.jm_login form#jm-login-form input[type='submit']{
 	width: 100%;
 	background: -ms-linear-gradient(top, #7CE0E0 0%, #37B7B7 100%);
 	background: -moz-linear-gradient(top, #7CE0E0 0%, #37B7B7 100%);
@@ -100,7 +98,7 @@
 }
 .jm_login .jmform_bottom{overflow: hidden;}
 /*Login------------------*/
-.jm_login .jmsocial{
+.jm_login .jm-social{
 	text-align: center;
 }
 .jm_login  ul{padding: 0;margin: 5px 0;}
@@ -108,7 +106,7 @@
 	display: inline-block;
 	list-style: none;
 }
-.jm_login .jmsocial ul li a{
+.jm_login .jm-social ul li a{
 	transition: 1s;
 	font-size: 18px;
 	background: #fff;
@@ -117,5 +115,55 @@
 	width: 20px;
 	border-radius: 20px;
 }
-.jm_login .jmsocial ul li a:hover {color: #fff;background: #47a0a0;}
+.jm_login .jm-social ul li a:hover {color: #fff;background: #47a0a0;}
 /*Register------------------*/
+.jm_login form#jm-form-register{margin: 15px 0;}
+.jm_login form#jm-form-register input{
+	color: #47a0a0;
+	padding: 10px 0;
+	margin: 0 0 15px 0;
+	border: none;
+	outline: none;
+	text-align: center;
+}
+.jm_login form#jm-form-register input.inputbox{
+	width: 99%;
+	padding: 10px 0;
+	border: 1px solid #cdd6e6;
+	border-radius: 5px;
+	transition: 1s;
+	box-shadow: 0px 1px 1px #f9fcfc;
+	background: -ms-linear-gradient(top, #D7E3E4 0%, #E3F0F1 100%);
+	background: -moz-linear-gradient(top, #D7E3E4 0%, #E3F0F1 100%);
+	background: -o-linear-gradient(top, #D7E3E4 0%, #E3F0F1 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #D7E3E4), color-stop(1, #E3F0F1));
+	background: -webkit-linear-gradient(top, #D7E3E4 0%, #E3F0F1 100%);
+	background: linear-gradient(to bottom, #D7E3E4 0%, #E3F0F1 100%);
+}
+.jm_login form#jm-form-register input.inputbox:hover,
+.jm_login form#jm-form-register input.inputbox:focus{
+	border-color: #47a0a0;
+}
+.jm_login form#jm-form-register input[type='submit']{
+	width: 100%;
+	background: -ms-linear-gradient(top, #7CE0E0 0%, #37B7B7 100%);
+	background: -moz-linear-gradient(top, #7CE0E0 0%, #37B7B7 100%);
+	background: -o-linear-gradient(top, #7CE0E0 0%, #37B7B7 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #7CE0E0), color-stop(1, #37B7B7));
+	background: -webkit-linear-gradient(top, #7CE0E0 0%, #37B7B7 100%);
+	background: linear-gradient(to bottom, #7CE0E0 0%, #37B7B7 100%);
+	font-weight: bold;
+	border: 1px solid #369797;
+	color: #fff;
+	margin-bottom: 15px;
+	border-radius: 5px;
+	box-shadow: inset 0px 1px 1px #9de9e9;
+}
+.jm_login form#jm-form-register input#jm-captcha{
+    float:right;
+    width:50%;
+}
+
+#jm-register-btn{
+    height:50px;
+}

@@ -38,7 +38,7 @@ JM(document).ready(function(){
     			   window.location.href=jmOpt.JM_RETURN;
     		   }else{
     			   if(html.indexOf('</head>')==-1){		   
-                       JM("#jm-login-error").html(Joomla.JText._('JM_LOGIN_AUTHENTICATE')).show(); 
+                       JM("#jm-login-error").html(jmmsg.JM_LOGIN_AUTHENTICATE).show(); 
                        JM("#jm-loading-login").hide();
                        JM(".jm-modal-dropdown").css({ opacity: 1 });
     				}
