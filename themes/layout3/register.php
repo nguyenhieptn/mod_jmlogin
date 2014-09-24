@@ -1,51 +1,41 @@
 <div id="jmregister" class="jmlayout3 jmregister jm_login">
 	<div class="jm-inner">
-		<form method="POST" id="jm-form-register" class="jm-layout3-form form-horizontal" action="<?php echo JRoute::_('index.php', true); ?>" >
-			<div id="jm-loading-register" style="width: <?php echo $modal_width.'px;';?>;">
-                     <div id="floatingBarsG1"><div class="blockG" id="rotateG_01"></div><div class="blockG" id="rotateG_02"></div><div class="blockG" id="rotateG_03"></div><div class="blockG" id="rotateG_04"></div><div class="blockG" id="rotateG_05"></div><div class="blockG" id="rotateG_06"></div><div class="blockG" id="rotateG_07"></div><div class="blockG" id="rotateG_08"></div></div>
-                </div>
-                <div id="jm-success"></div>
-                <div id="jm-registration-error" class="jm-error"></div>
+		<form method="POST" id="login-form">
+			
 			<div class="userdata">
 				<div class="jm-name input jmbg">
-					<input type="text" id="jm-input-name" class="inputbox" name="name" placeholder="<?php echo JText::_('JM_REGISTER_NAME'); ?>"/>
+					<input type="text" id="jm-input-name" class="inputbox" name="name" placeholder="name"/>
 				</div>
 				<div class="jm-username input jmbg">
-					<input type="text" id="jm-input-user-name" class="inputbox" name="username" placeholder="<?php echo JText::_('JM_USERNAME'); ?>"/>
+					<input type="text" id="jm-input-user-name" class="inputbox" name="userename" placeholder="username"/>
 				</div>
-				<div class="jm-password input jmbg">
-                    <input type="password" id="jm-input-pass" class="inputbox" name="password" placeholder="<?php echo JText::_('JM_PASSWORD'); ?>"/>
-                </div>
+				<div class="jm-password input jmbg"><input type="password" id="jm-input-pass" class="inputbox" name="password" placeholder="password"/></div>
 				
-				<div class="jm-confirmpassword input jmbg">
-                    <input type="password" id="jm-input-confirm-pass" class="inputbox" name="password2" placeholder="<?php echo JText::_('JM_CONFIRM_PASSWORD'); ?>"/>
-                </div>
+				<div class="jm-confirmpassword input jmbg"><input type="password" id="jm-input-confirm-pass" class="inputbox" name="password" placeholder="confirm password"/></div>
 
-				<div class="jm-emailaddress input jmbg">
-                    <input type="text" id="jm-input-email" class="inputbox" name="email" placeholder="<?php echo JText::_('JM_REGISTER_EMAIL_ADDRESS'); ?>"/> 
-                </div>
+				<div class="jm-emailaddress input jmbg"><input type="password" id="jm-input-email" class="inputbox" name="password" placeholder="email address"/></div>
 				
-				<div class="jm-confirmemailaddress input jmbg">
-                    <input type="text" id="jm-input-confirm-email" class="inputbox" name="confirmeamil" placeholder="<?php echo JText::_('JM_REGISTER_CONFIRM_EMAIL_ADDRESS'); ?>"/>
+				<div class="jm-confirmemailaddress input jmbg"><input type="password" id="jm-input-confirm-email" class="inputbox" name="password" placeholder="confirm email address"/></div>
+		          <?php if($show_recaptcha):?> 
+                    <div class="captcha">
+                        <div style="min-width: 13em; padding: 0 5px;">
+                            <label id="captcha-lbl" for="captcha">
+                                <img src="<?php echo JURI::base( true ); ?>/modules/mod_jmlogin/assets/captcha/images/<?php echo $return_captcha['file'];?>" alt="" id="captcha_img" />
+                                <span class="star">&nbsp;*</span>
+                            </label>
+                        </div>
+                        <div style="padding-top: 8px;">
+                            <input type="text" id="captcha" name="<?php echo $return_captcha['id']; ?>" class="required" size="10" />
+                        </div>
+                        <div style="padding: 11px 0 0 4px;"><?php //echo JText::_('AJAXREG_CAPTCHA'); ?></div>
+                    </div>
+                    <?php endif;?>
+                    <label class="jm-wrap">Filds width(*) are required</label> 
+				<div class="jm-submit jm-register">
+                    <input type="submit" name="register" id="jm-register-btn" class="btn-jm-submit" value="Register"/>
+                    <input type="hidden" name="task" value="register" />
+    				<?php echo JHtml::_('form.token');?>
                 </div>
-                    
-                        <?php if($use_captcha!=0){   ?>
-                        <div class="captcha jmbg">
-					<div class="jm-field">
-						<div  id="jm-captchas"><?php echo $captcha;?></div>
-					</div>
-					<div id="jm-registration-captcha-error" class="btl-error-detail"></div>
-					<div class="clear"></div>
-                    </div>
-					<?php }?>    
-                    
-                    
-				<div class="jm-submit">
-                <label class="jm-wrap">Filds width(*) are required</label> 
-                        <input type="submit" name="register" id="jm-register-btn" class="btn-jm-submit" value="Register"/>
-                        <input type="hidden" name="task" value="register" />
-    					<?php echo JHtml::_('form.token');?>
-                    </div>
 			
 				
 			</div>

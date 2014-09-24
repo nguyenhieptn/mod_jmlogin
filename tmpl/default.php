@@ -145,7 +145,6 @@ var jmmsg={
 	JM_CONFIRM_EMAIL : "<?php echo JText::_('JM_REQUIRED_CONFIRM_EMAIL') ;?>",
 	JM_EMAIL_NOT_MATCH : "<?php echo JText::_('JM_EMAIL_NOT_MATCH') ;?>",
 	JM_CAPTCHA : "<?php echo JText::_('JM_REQUIRED_USERNAME') ;?>",
-    JM_LOGIN_AUTHENTICATE: "<?php echo JText::_('JM_LOGIN_AUTHENTICATE');?>"
 }
 var jmOpt = 
 {

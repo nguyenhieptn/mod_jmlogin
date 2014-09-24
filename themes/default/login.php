@@ -11,10 +11,7 @@
                 <div class="jm-error" id="jm-login-error"></div>
 				<div class="jm-userdata">
 					<div class="jm-username">
-						<span>
-							<i class="fa fa-envelope"></i>
-						</span>
-						<input type="text" id="jm-input-username" class="inputbox" name="username" placeholder="<?php echo JText::_('JM_USERNAME'); ?>"/>
+						<span><i class="fa fa-envelope"></i></span><input type="text" id="jm-input-username" class="inputbox" name="username" placeholder="<?php echo JText::_('JM_USERNAME'); ?>"/>
 					</div>
 					<div class="jm-password"><span><i class="fa fa-lock"></i></span><input type="password" id="jm-input-password" class="inputbox" name="password" placeholder="<?php echo JText::_('JM_PASSWORD'); ?>"/></div>
 					 <?php if (JPluginHelper::isEnabled('system', 'remember')) : ?>
